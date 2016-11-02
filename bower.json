@@ -1,0 +1,24 @@
+{
+  "name": "php-play2gether",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Christopher2K <christopher.katoyi@icloud.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Christopher2K/php-play2gether",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "statics/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "jquery-ui": "^1.12.1",
+    "bootstrap": "boostrap#^3.3.7",
+    "font-awesome": "^4.7.0"
+  }
+}
