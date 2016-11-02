@@ -18,3 +18,4 @@
 ### Installation
 1. Cloner le projet: `git clone https://github.com/Christopher2K/php-play2gether`.
 2. Placer ce dossier dans un répertoire web.
+3. 
