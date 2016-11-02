@@ -24,6 +24,7 @@
     <!-- Theme CSS -->
     <!--<link href="css/agency.min.css" rel="stylesheet">-->
     <link href="css/agency.css" rel="stylesheet">
+    <link href="css/matchsTable.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -166,7 +167,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services">
+    <section id="matchsRecents">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -175,30 +176,89 @@
                     <h3 class="section-subheading text-muted">Découvrez les derniers matchs proposés</h3>
                 </div>
             </div>
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-futbol-o" aria-hidden="true"></i>
-                    </span>
-                    <h4 class="service-heading">E-Commerce</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-futbol-o" aria-hidden="true"></i>
-                    </span>
-                    <h4 class="service-heading">Responsive Design</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-futbol-o" aria-hidden="true"></i>
-                    </span>
-                    <h4 class="service-heading">Web Security</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
+                
+            <div class="row flat">
+            <div class="col-lg-3 col-md-3 col-xs-6">
+                <ul class="plan plan1">
+                    <li class="plan-name">
+                        Football Américain
+                    </li>
+                    <li class="plan-price">
+                        <strong>Lieu :</strong> Amiens
+                    </li>
+                    
+                    <li>
+                        <strong>Date :</strong> 01/01/2017
+                    </li>
+                    <li>
+                        <strong>Participants :</strong> 1
+                    </li>
+                    <li class="plan-action">
+                        <a href="#" class="btn btn-danger btn-lg">Rejoindre</a>
+                    </li>
+                </ul>
             </div>
-        </div>
+            <div class="col-lg-3 col-md-3 col-xs-6">
+                <ul class="plan plan1">
+                    <li class="plan-name">
+                        Football Américain
+                    </li>
+                    <li class="plan-price">
+                        <strong>Lieu :</strong> Amiens
+                    </li>
+                    
+                    <li>
+                        <strong>Date :</strong> 01/01/2017
+                    </li>
+                    <li>
+                        <strong>Participants :</strong> 1
+                    </li>
+                    <li class="plan-action">
+                        <a href="#" class="btn btn-danger btn-lg">Rejoindre</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-3 col-xs-6">
+                <ul class="plan plan1">
+                    <li class="plan-name">
+                        Football Américain
+                    </li>
+                    <li class="plan-price">
+                        <strong>Lieu :</strong> Amiens
+                    </li>
+                    
+                    <li>
+                        <strong>Date :</strong> 01/01/2017
+                    </li>
+                    <li>
+                        <strong>Participants :</strong> 1
+                    </li>
+                    <li class="plan-action">
+                        <a href="#" class="btn btn-danger btn-lg">Rejoindre</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-3 col-xs-6">
+                <ul class="plan plan1">
+                    <li class="plan-name">
+                        Football Américain
+                    </li>
+                    <li class="plan-price">
+                        <strong>Lieu :</strong> Amiens
+                    </li>
+                    
+                    <li>
+                        <strong>Date :</strong> 01/01/2017
+                    </li>
+                    <li>
+                        <strong>Participants :</strong> 1
+                    </li>
+                    <li class="plan-action">
+                        <a href="#" class="btn btn-danger btn-lg">Rejoindre</a>
+                    </li>
+                </ul>
+            </div>
+            </div>
     </section>
 
     <!-- Team Section -->

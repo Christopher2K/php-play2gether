@@ -786,10 +786,14 @@ body {
 }
 
 #login {
-  background-color: #95a5a6;
+  background-color: #bdc3c7;
 }
 
-#about {
+#about{
+  background-color: #eeeeee;
+}
+
+#matchsRecents {
   background-color: #bdc3c7;
 }
 
