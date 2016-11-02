@@ -226,10 +226,10 @@ fieldset[disabled] .btn-xl.active {
   }
 }
 header {
-  background-image: url('../img/header-bg.jpg');
+  background-image: url('../img/fond-texture.jpg');
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-position: center center;
+  /*background-position: center center;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -260,6 +260,7 @@ header .intro-text .intro-heading {
   header .intro-text {
     padding-top: 300px;
     padding-bottom: 200px;
+    height: 100vh;
   }
   header .intro-text .intro-lead-in {
     font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -550,6 +551,45 @@ section h3.section-subheading {
 .team-member p {
   margin-top: 0;
 }
+.connexion-accueil {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.connexion-accueil img {
+  margin: 0 auto;
+  border: 7px solid white;
+}
+.connexion-accueil h4 {
+  margin-top: 25px;
+  margin-bottom: 0;
+  text-transform: none;
+}
+.connexion-accueil p {
+  margin-top: 0;
+}
+.connexion-accueil input {
+  margin-left: 37%;
+  width: 300px;
+}
+.connexion-accueil .fa {
+  width : 200px;
+}
+.logoconnexion img {
+  margin-left: 37%;
+  width: 300px;
+}
+
+@media (max-width: 1200px) {
+  .logoconnexion img {
+    margin-left: 18%;
+    width: 300px;
+}
+.connexion-accueil input {
+  margin-left: 18%;
+  width: 300px;
+}
+}
+
 aside.clients img {
   margin: 50px auto;
 }
@@ -743,4 +783,12 @@ img::-moz-selection {
 }
 body {
   webkit-tap-highlight-color: #fed136;
+}
+
+#login {
+  background-color: #95a5a6;
+}
+
+#about {
+  background-color: #bdc3c7;
 }
