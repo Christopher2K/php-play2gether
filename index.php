@@ -89,6 +89,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">À propos</h2>
+                    <hr />
                     <h3 class="section-subheading text-muted">Que dire à propos de Play2Gether...</h3>
                 </div>
             </div>
@@ -170,6 +171,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Les matchs récents</h2>
+                    <hr />
                     <h3 class="section-subheading text-muted">Découvrez les derniers matchs proposés</h3>
                 </div>
             </div>
@@ -205,6 +207,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">L'équipe</h2>
+                    <hr />
                     <h3 class="section-subheading text-muted">Découvrez notre équipe.</h3>
                 </div>
             </div>
@@ -299,6 +302,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Espace de connexion</h2>
+                    <hr />
                     <p class="large text-muted">Veuillez vous identifier</p>                    
                 </div>
             </div>
@@ -356,6 +360,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Nous contacter</h2>
+                    <hr />
                     <h3 class="section-subheading text-muted">Une question? Un renseignement ? N'hésitez pas.</h3>
                 </div>
             </div>
