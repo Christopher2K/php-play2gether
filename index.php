@@ -9,7 +9,9 @@
     </head>
 
     <body>
-        <?php getScript(); ?>
+        <?php getMenu(); ?>
+        <?php getScripts(); ?>
         <!-- Script custom -->
+
     </body>
 </html>

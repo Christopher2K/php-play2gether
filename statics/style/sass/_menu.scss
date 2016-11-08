@@ -1,0 +1,47 @@
+@import "__colors";
+@import "__mixins";
+@import "__settings";
+
+$min-height: 70px;
+$max-height: 80px;
+
+.Navbar {
+  font-family: $font-catamaran;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .Navbar-logo {
+    height: 98%;
+  }
+
+  .Navbar-items {
+    height: 100%;
+    list-style: none;
+
+    display: flex;
+    flex-direction: row;
+
+    li {
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      a {
+        padding: 10px 15px;
+
+      }
+    }
+  }
+}
+
+  .Navbar--initial {
+    height: $min-height;
+  }
+  .Navbar--grown {
+    height: $max-height;
+  }
