@@ -194,7 +194,7 @@
                         <strong>Participants :</strong> 1
                     </li>
                     <li class="plan-action">
-                        <a href="#" class="btn btn-danger btn-lg">Rejoindre</a>
+                        <a href="#" class="btn btn-xl">Rejoindre</a>
                     </li>
                 </ul>
             </div>
@@ -214,7 +214,7 @@
                         <strong>Participants :</strong> 1
                     </li>
                     <li class="plan-action">
-                        <a href="#" class="btn btn-danger btn-lg">Rejoindre</a>
+                        <a href="#" class="btn btn-xl">Rejoindre</a>
                     </li>
                 </ul>
             </div>
@@ -234,7 +234,7 @@
                         <strong>Participants :</strong> 1
                     </li>
                     <li class="plan-action">
-                        <a href="#" class="btn btn-danger btn-lg">Rejoindre</a>
+                        <a href="#" class="btn btn-xl">Rejoindre</a>
                     </li>
                 </ul>
             </div>
@@ -254,7 +254,7 @@
                         <strong>Participants :</strong> 1
                     </li>
                     <li class="plan-action">
-                        <a href="#" class="btn btn-danger btn-lg">Rejoindre</a>
+                        <a href="#" class="btn btn-xl">Rejoindre</a>
                     </li>
                 </ul>
             </div>
@@ -385,34 +385,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Clients Aside -->
-    <aside class="clients">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/envato.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/designmodo.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/themeforest.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/creative-market.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </aside>
 
     <!-- Contact Section -->
     <section id="contact">
