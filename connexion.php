@@ -20,8 +20,6 @@
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
     <!-- Theme CSS -->
     <!--<link href="css/agency.min.css" rel="stylesheet">-->
@@ -89,18 +87,15 @@
                     <hr />
                     <h3 class="large text-muted">Veuillez vous identifier</h3>
                 </div>
-                <div class="logoconnexion">
-                    <img src="img/logos/icon-login.png"/>
-                </div>
-                </div>
+            </div>
                 <form>
                     <div class="form-group">
-                    <label for="id">Identifiant</label>
-                    <input type="text" class="form-control" id="id" aria-describedby="id" placeholder="Identifiant">
+                        <label for="id">Identifiant</label>
+                        <input type="text" class="form-control" id="id" aria-describedby="id" placeholder="Identifiant">
                     </div>
                     <div class="form-group">
-                    <label for="password">Mot de passe</label>
-                    <input type="password" class="form-control" id="password" placeholder="Mot de passe">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" class="form-control" id="password" placeholder="Mot de passe">
                     </div>
                     <button type="submit" class="btn btn-primary">Connexion</button>
                 </form>
