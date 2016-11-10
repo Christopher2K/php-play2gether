@@ -46,7 +46,7 @@
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
                 <div class="headerlogo">
-                    <a class="navbar-brand page-scroll" href="index.php"><img src="../logo.png" alt="logo"></a>
+                    <a class="navbar-brand page-scroll" href="index.php"><img src="../banniere.png" alt="logo"></a>
                 </div>
             </div>
 

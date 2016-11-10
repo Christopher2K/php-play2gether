@@ -837,8 +837,9 @@ section#joinus p{
 }
 
 .headerlogo img {
-  width: 50px;
-  height: 50px;
+  margin-top: -25px;
+  width: 155px;
+  height: 66px;
 }
 
 /* Connexion */
