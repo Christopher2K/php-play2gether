@@ -45,7 +45,10 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="index.php">PLAY2GETHER + Logo ? </a>
+                <div class="headerlogo">
+                    <a class="navbar-brand page-scroll" href="index.php"><img src="../logo.png" alt="logo"></a>
+                </div>
+                <a class="navbar-brand page-scroll" href="index.php"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -62,6 +65,12 @@
                     </li>
                     <li>
                         <a class="page-scroll" href="resultats.php">Résultats</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="connexion.php">Connexion</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="inscription.php">Inscription</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="recherche.php"><i class="fa fa-search" aria-hidden="true"></i></a>

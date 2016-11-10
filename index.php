@@ -69,6 +69,9 @@
                         <a class="page-scroll" href="connexion.php">Connexion</a>
                     </li>
                     <li>
+                        <a class="page-scroll" href="inscription.php">Inscription</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="recherche.php"><i class="fa fa-search" aria-hidden="true"></i></a>
                     </li>
                 </ul>
@@ -378,7 +381,7 @@
             <div class="row">
                 <div class="col-sm-6 col-md-12">
                     <div class="rejoigneznous">
-                        <button type="button" class="btn btn-outline-secondary btn-xl">Rejoignez-nous ! </button>
+                        <a href="inscription.php"><button type="button" class="btn btn-outline-secondary btn-xl">Rejoignez-nous ! </button></a>
                     </div>
                 </div>
             </div>
