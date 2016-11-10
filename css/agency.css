@@ -379,7 +379,7 @@ section h3.section-subheading {
   position: absolute;
   content: "";
   width: 2px;
-  background-color: #f1f1f1;
+  background-color: #7f8c8d;
   left: 40px;
   margin-left: -1.5px;
 }
@@ -856,6 +856,25 @@ section#login {
 }
 
 
+/* Inscription */
+
+form#inscription {
+  margin : 0;
+  margin-top: 5%;
+}
+
+form#inscription input {
+  width: 100%;
+}
+
+form#inscription button[type="submit"]{
+  margin-top: 5%;
+  margin-left: 25%;
+}
+
+form#inscription .style_annonce {
+}
+
 /*sass variables used*/
 $full:100%;
 $auto:0 auto;
@@ -916,7 +935,7 @@ section#login label {
   color: white;
 }
 
-input[type="text"], input[type="email"], input[type="file"], input[type="password"], input[type="tel"], select, textarea{
+input[type="text"], input[type="email"], input[type="file"], input[type="password"], input[type="tel"], input[type="date"], select, textarea{
   width:50%;
   height: 60px;
   padding:15px 0px 15px 8px;
@@ -964,9 +983,6 @@ input[type="text"], input[type="email"], input[type="file"], input[type="passwor
   position:fixed;
   right:3%;
   top:0px;
-}
- select {
-  height: 30px;
 }
 
 /* Contact us */ 
