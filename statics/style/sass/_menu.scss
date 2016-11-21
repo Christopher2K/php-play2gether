@@ -2,10 +2,14 @@
 @import "__mixins";
 @import "__settings";
 
-$min-height: 70px;
-$max-height: 80px;
-
 .Navbar {
+  background: transparent;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
   font-family: $font-catamaran;
   width: 100%;
 
@@ -14,8 +18,14 @@ $max-height: 80px;
   justify-content: space-between;
   align-items: center;
 
+  padding: 0 15px;
+
   .Navbar-logo {
     height: 98%;
+    img {
+      height: 100%;
+      width: auto;
+    }
   }
 
   .Navbar-items {
@@ -32,16 +42,120 @@ $max-height: 80px;
       align-items: center;
 
       a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
         padding: 10px 15px;
 
+        color: white;
       }
     }
   }
 }
 
   .Navbar--initial {
-    height: $min-height;
+    transition: all 200ms ease-in;
   }
   .Navbar--grown {
-    height: $max-height;
+    transition: all 200ms ease-out;
+
   }
+
+// Responsiveness
+// Tablet & Phone
+@media screen and (max-width: 769px) {
+  .Navbar {
+    .Navbar-items {
+      background: black;
+
+      position: absolute;
+      top: -300px;
+      left: 0;
+
+      width: 100%;
+      height: auto;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      z-index: 10;
+
+      transition: top 500ms linear;
+
+      li {
+        width: 100%;
+        height: $nb-mobile-items-height;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-bottom: 1px solid white;
+
+        a {
+          width: 100%;
+          text-align: center;
+          color: white;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .Navbar-items--active {
+      top: $nb-mobile-height;
+    }
+
+    .Navbar-burger {
+      display: flex;
+      cursor: pointer;
+      color: white;
+
+      border-radius: 10px;
+
+      transition: all 200ms linear;
+
+      &:hover {
+        color: $vivid-burgundy;
+      }
+    }
+
+    .Navbar-burger--active {
+      color: $vivid-burgundy;
+
+      &:hover {
+        color: white;
+      }
+
+    }
+  }
+
+  .Navbar--initial {
+    height: $nb-mobile-height;
+    background: $cold-gray;
+  }
+  .Navbar--grown {
+    height: $nb-mobile-height;
+    background: $cold-gray;
+  }
+}
+
+// Desktop
+@media screen and (min-width: 770px) {
+  .Navbar {
+    .Navbar-burger {
+      display: none;
+    }
+  }
+
+  .Navbar--initial {
+    height: $nb-desktop-min-height;
+  }
+  .Navbar--grown {
+    height: $nb-desktop-max-height;
+    background: $cold-gray;
+  }
+}

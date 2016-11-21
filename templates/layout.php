@@ -44,6 +44,9 @@
             <script src="/statics/vendor/jquery/dist/jquery.min.js"></script>
             <script src="/statics/vendor/jquery-ui/jquery-ui.min.js"></script>
             <script src="/statics/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+            <script src="/statics/vendor/jquery-scrollspy/jquery-scrollspy.min.js"></script>
+
+            <script src="/statics/script/menu.js"></script>
         <?php
 
     }
@@ -56,7 +59,10 @@
         ?>
             <nav class="Navbar Navbar--initial">
                 <div class="Navbar-logo">
-                    Play2Gether Logo + Name
+                    <img src="/statics/img/logo-small.png" />
+                </div>
+                <div class="Navbar-burger">
+                    <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
                 </div>
                 <ul class="Navbar-items">
                     <li><a href="#">Accueil</a></li>
@@ -71,12 +77,30 @@
     }
 
     /**
+     * Return the common call 2 action
+     * @return HTLM Code
+     */
+    function getCallToAction() {
+        ?>
+            <button class="call2Action">Rejoins la communauté !</button>
+        <?php
+    }
+
+    /**
      * Return the common footer
      * @return HTML Code
      */
     function getFooter() {
         ?>
+            <footer>
+                <p>Copyright &copy; Play2Gether 2016</p>
+                <div>
 
+                </div>
+                <div>
+                    <a href="#">Mentions légales</a>
+                </div>
+            </footer>
         <?php
     }
 ?>
