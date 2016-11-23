@@ -18,9 +18,11 @@
             <!-- Vendor -->
             <link href="/statics/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
             <link href="/statics/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+            <link href="/statics/vendor/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css">
 
             <!-- Custom Fonts -->
             <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
+
 
             <!-- Custom CSS -->
             <link href="/statics/style/css/play2gether-theme.css" rel="stylesheet" type="text/css">
@@ -45,8 +47,10 @@
             <script src="/statics/vendor/jquery-ui/jquery-ui.min.js"></script>
             <script src="/statics/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
             <script src="/statics/vendor/jquery-scrollspy/jquery-scrollspy.min.js"></script>
+            <script src="/statics/vendor/select2/dist/js/select2.full.min.js"></script>
 
             <script src="/statics/script/menu.js"></script>
+            <script src="/statics/script/search.js"></script>
         <?php
 
     }
@@ -66,13 +70,45 @@
                 </div>
                 <ul class="Navbar-items">
                     <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Matchs</a></li>
+                    <li><a href="#">Annonces</a></li>
                     <li><a href="#">Résultat</a></li>
                     <li><a href="#">Inscription</a></li>
                     <li><a href="#">Connexion</a></li>
+<!--                    <li id="toogle-search"><i class="Search-icon fa fa-search"></i></li>-->
                 </ul>
             </nav>
-        
+
+            <div class="SearchBox SearchBox--inactive">
+                <div class="SearchBox-header">
+                    <h3>Trouve ta partie !</h3>
+                </div>
+
+                <div class="SearchBox-inputField">
+                    <div class="inputField-sport">
+                        <label for="search-sport">Entre ton sport</label>
+                        <input type="text" name="search-sport" id="search-sport" />
+                    </div>
+
+                    <div class="inputField-date">
+                        <label for="search-date">Choisis une date</label>
+                        <input type="text" name="search-date" id="search-date" />
+                    </div>
+
+                    <div class="inputField-location">
+                        <label for="search-location">Choisi un endroit</label>
+                        <input type="text" name="search-location" id="search-location"/>
+                    </div>
+                </div>
+
+                <div>
+                    ICI FILTRES
+                </div>
+
+                <div>
+                    <button>Rechercher</button>
+                </div>
+            </div>
+
         <?php
     }
 
@@ -80,7 +116,7 @@
      * Return the common call 2 action
      * @return HTLM Code
      */
-    function getCallToAction() {
+    function getCallToAction($tagLine) {
         ?>
             <button class="call2Action">Rejoins la communauté !</button>
         <?php
@@ -92,15 +128,54 @@
      */
     function getFooter() {
         ?>
-            <footer>
-                <p>Copyright &copy; Play2Gether 2016</p>
-                <div>
-
+            <footer class="Footbar">
+                <p class="Footbar-copyright">Copyright &copy; Play2Gether 2016</p>
+                <div class="Footbar-socials">
+                    <a href="#"><i style="padding-right: 2px; padding-top: 1px;" class="fa fa-facebook "  aria-hidden="true"></i></a>
+                    <a href="#"><i style="" class="fa fa-twitter " aria-hidden="true"></i></a>
                 </div>
-                <div>
+                <div class="Footbar-legals">
                     <a href="#">Mentions légales</a>
                 </div>
             </footer>
+        <?php
+    }
+
+    /**
+     * Return the contact form
+     * @return HTML Code
+     */
+    function getContactForm() {
+        ?>
+        <section class="Contact">
+            <div class="Contact-header">
+                <h2>Nous contacter</h2>
+                <hr />
+                <p>Une question ? Un renseignement ? N'hésitez pas à nous faire part.</p>
+            </div>
+
+            <div class="Contact-content">
+                <form class="Content-form">
+                    <div class="Form-fields">
+                        <div class="Fields-left">
+                            <input type="text" name="nom_contact" id="nom_contact" placeholder="NOM" required />
+                            <input type="text" name="prenom_contact" id="prenom_contact" placeholder="PRENOM" required />
+                            <input type="email" name="email_contact" id="email_contact" placeholder="ADRESSE MAIL" required />
+                            <input type="tel" name="telephone_contact" id="telephone_contact" placeholder="TÉLÉPHONE" required />
+                        </div>
+
+                        <div class="Fields-right">
+                            <textarea name="message_contact" id="message_contact" placeholder="MESSAGE"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="Form-submit">
+                        <button type="submit">Envoyer</button>
+                    </div>
+                </form>
+            </div>
+
+        </section>
         <?php
     }
 ?>

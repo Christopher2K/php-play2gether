@@ -15,30 +15,14 @@ body {
   height: 100%;
 }
 
-//@media screen and (max-width: 769px) {
-//  html {
-//    body {
-//      padding: $nb-mobile-height 0 0 0;
-//    }
-//  }
-//
-//}
-//
-//// Desktop
-//@media screen and (min-width: 770px) {
-//  html {
-//    body {
-//      padding: $nb-desktop-min-height 0 0 0;
-//    }
-//  }
-//}
-
 ul {
   padding: 0;
   margin: 0;
 }
 
 a {
+  cursor: pointer;
+
   &:hover {
     text-decoration: none;
   }
@@ -53,8 +37,13 @@ button {
   }
 }
 
+
+
+
 /* Inclusions */
 @import "menu";
 @import "footer";
+@import "contact";
+@import "search-box";
 
 @import "index";

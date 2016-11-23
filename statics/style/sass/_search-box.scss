@@ -1,0 +1,37 @@
+/**
+ * Auteur: christopher
+ * Date: 23/11/2016
+ */
+
+.SearchBox {
+  position: fixed;
+  z-index: 999;
+
+  top: 90px;
+  left: 5%;
+
+  width: 90%;
+  height: 300px;
+
+  padding: 20px;
+
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.75);
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  background: white;
+
+  .SearchBox-header {
+    h3 {
+      margin: 0 0 30px 0;
+    }
+  }
+}
+
+.SearchBox--inactive {
+  display: none;
+}

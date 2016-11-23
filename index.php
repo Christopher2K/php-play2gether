@@ -14,7 +14,6 @@
         <header class="IndexHeader">
             <div class="IndexHeader-content">
                 <img src="/statics/img/logo.png" alt="Logo"/>
-<!--                <h1>Play2Gether</h1>-->
                 <h2>Trouve ton équipe et joue dès maintenant !</h2>
             </div>
         </header>
@@ -22,6 +21,8 @@
         <section>
             <div>
                 <h2>Le concept</h2>
+                <hr />
+                <p></p>
             </div>
 
             <div>
@@ -40,6 +41,8 @@
         <section>
             <div>
                 <h2>Recrutements en cours</h2>
+                <hr />
+                <p></p>
             </div>
 
             <div>
@@ -80,6 +83,8 @@
         <section>
             <div>
                 <h2>L'Équipe</h2>
+                <hr />
+                <p></p>
             </div>
 
             <div>
@@ -124,6 +129,8 @@
                 </div>
             </div>
         </section>
+
+        <?php getContactForm() ?>
 
         <?php getFooter(); ?>
 

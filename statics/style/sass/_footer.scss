@@ -3,4 +3,80 @@
  * Date: 02/11/2016
  */
 
+@import "__colors";
+@import "__mixins";
+@import "__settings";
+
+.Footbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  height: $fb-height;
+
+  .Footbar-copyright {
+    width: 33.3%;
+    text-align: left;
+
+    margin: 0;
+    padding-left: 15%;
+
+    font-weight: bold;
+  }
+
+  .Footbar-socials {
+    width: 33.3%;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a {
+      height: 40px;
+      width: 40px;
+
+      background: black;
+
+      border-radius: 40px;
+      margin: 0 15px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: white;
+
+      transition: background 250ms ease-in;
+
+      &:hover {
+        background: $kounicova;
+        transition: background 250ms ease-out;
+      }
+
+      i {
+        font-size: 20px;
+      }
+
+    }
+  }
+
+  .Footbar-legals {
+    width: 33.3%;
+    text-align: right;
+    padding-right: 15%;
+
+    a {
+      font-weight: bold;
+      color: $kounicova;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+  }
+}
+
 
