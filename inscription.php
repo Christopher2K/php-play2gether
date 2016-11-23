@@ -37,7 +37,7 @@
 
 <body id="page-top" class="index">
 
-    <!-- Navigation -->
+     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -46,9 +46,8 @@
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
                 <div class="headerlogo">
-                    <a class="navbar-brand page-scroll" href="index.php"><img src="../logo.png" alt="logo"></a>
+                    <a class="navbar-brand page-scroll" href="index.php"><img src="../banniere.png" alt="logo"></a>
                 </div>
-                <a class="navbar-brand page-scroll" href="index.php"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -145,7 +144,7 @@
                             </select>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Connexion</button>
+                    <button type="submit" class="btn btn-primary">Inscription</button>
                 </form>
             </div>
         </div>
