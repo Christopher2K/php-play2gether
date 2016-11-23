@@ -26,15 +26,15 @@
                         </div>
                         <div class="form-group">
                             <label for="id">Identifiant</label>
-                            <input type="text" class="form-control" id="id" aria-describedby="id" placeholder="Identifiant">
+                            <input type="text" class="form-control" id="id" aria-describedby="id" placeholder="Identifiant" required>
                         </div>
                         <div class="form-group">
                             <label for="password">Mot de passe</label>
-                            <input type="password" class="form-control" id="password" placeholder="Mot de passe">
+                            <input type="password" class="form-control" id="password" placeholder="Mot de passe" required>
                         </div>
                         <div class="form-group">
                             <label for="verifpassword">Saisir à nouveau le mot de passe</label>
-                            <input type="password" class="form-control" id="verifpassword" placeholder="Mot de passe">
+                            <input type="password" class="form-control" id="verifpassword" placeholder="Mot de passe" required>
                         </div>
                     </div>
                      
@@ -42,19 +42,19 @@
                         <div class="form-group">
                             <label for="sexe"> Sexe </label></br> 
                            <div class="sexe"> 
-                                Homme <input name="sexe" type="radio" value="homme">
-                                Femme <input name="sexe" type="radio" value="femme">
+                                Homme <input name="sexe" type="radio" value="homme" required>
+                                Femme <input name="sexe" type="radio" value="femme" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="naissance">
                             <label for="born">Date de naissance</label>
-                            <input type="date" class="form-control" id="born" placeholder="">
+                            <input type="date" class="form-control" id="born" placeholder="" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="ville">Ville</label>
-                            <input type="text" class="form-control" id="ville" placeholder="Ville">
+                            <input type="text" class="form-control" id="ville" placeholder="Ville" required>
                         </div>
                         <div class="form-group">
                             <label for="ville">Sport</label>
