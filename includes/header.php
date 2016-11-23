@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="en">
 
 <head>
@@ -39,7 +37,8 @@
 <body id="page-top" class="index">
 
     <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -49,7 +48,6 @@
                 <div class="headerlogo">
                     <a class="navbar-brand page-scroll" href="index.php"><img src="../banniere.png" alt="logo"></a>
                 </div>
-                <a class="navbar-brand page-scroll" href="index.php"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -71,9 +69,6 @@
                         <a class="page-scroll" href="connexion.php">Connexion</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="inscription.php">Inscription</a>
-                    </li>
-                    <li>
                         <a class="page-scroll" href="recherche.php"><i class="fa fa-search" aria-hidden="true"></i></a>
                     </li>
                 </ul>
@@ -85,39 +80,15 @@
 
     <!-- Header -->
     <header>
-        
-    </header>
-=======
-    <?php 
-        include 'includes/header.php'; 
-    ?>
->>>>>>> b7be086afe2005f7895eb106dbb2995745956446
-
-        <!-- About Section -->
-    <section id="login">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Espace de connexion</h2>
-                    <hr />
-                    <h3 class="large text-muted">Veuillez vous identifier</h3>
+            <div class="col-md-12">
+                <div class="intro-text">
+                    <div class="logo">
+                        <img src="../logo.png" alt="logo">
+                    </div>
+                    <div class="intro-lead-in">Bienvenue sur Play2Gether</div>
+                    <!-- <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a> -->
                 </div>
             </div>
-                <form>
-                    <div class="form-group">
-                        <label for="id">Identifiant</label>
-                        <input type="text" class="form-control" id="id" aria-describedby="id" placeholder="Identifiant">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Mot de passe</label>
-                        <input type="password" class="form-control" id="password" placeholder="Mot de passe">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Connexion</button>
-                </form>
-            </div>
         </div>
-    </section>
-    
-    <?php 
-        include 'includes/footer.php'; 
-    ?>
+    </header>
