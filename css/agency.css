@@ -859,6 +859,18 @@ section#login {
 
 /* Inscription */
 
+section#inscription {
+  background-color: #222222;
+  background-image: url('../img/map-image.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: white;
+}
+
 form#inscription {
   margin : 0;
   margin-top: 5%;
@@ -868,12 +880,22 @@ form#inscription input {
   width: 100%;
 }
 
+form#inscription label {
+  color: #FFF;
+}
+
 form#inscription button[type="submit"]{
   margin-top: 5%;
   margin-left: 25%;
 }
 
-form#inscription .style_annonce {
+form#inscription .sexe {
+  display: flex;
+  margin-top: 20px;
+}
+
+.naissance {
+  margin-top: 34px;
 }
 
 /*sass variables used*/

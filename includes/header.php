@@ -69,6 +69,9 @@
                         <a class="page-scroll" href="connexion.php">Connexion</a>
                     </li>
                     <li>
+                        <a class="page-scroll" href="inscription.php">Inscription</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="recherche.php"><i class="fa fa-search" aria-hidden="true"></i></a>
                     </li>
                 </ul>
@@ -77,18 +80,3 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="col-md-12">
-                <div class="intro-text">
-                    <div class="logo">
-                        <img src="../logo.png" alt="logo">
-                    </div>
-                    <div class="intro-lead-in">Bienvenue sur Play2Gether</div>
-                    <!-- <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a> -->
-                </div>
-            </div>
-        </div>
-    </header>

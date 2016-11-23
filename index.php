@@ -2,8 +2,20 @@
     <?php 
         include 'includes/header.php'; 
     ?>
-
-    
+        <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="col-md-12">
+                <div class="intro-text">
+                    <div class="logo">
+                        <img src="../logo.png" alt="logo">
+                    </div>
+                    <div class="intro-lead-in">Bienvenue sur Play2Gether</div>
+                    <!-- <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a> -->
+                </div>
+            </div>
+        </div>
+    </header>
 
         <!-- About Section -->
     <section id="about">
