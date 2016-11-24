@@ -61,7 +61,7 @@
                         <a class="page-scroll" href="index.php">Accueil</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="matchs.php">Matchs</a>
+                        <a class="page-scroll" href="annonces.php">Annonces</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="resultats.php">Résultats</a>
@@ -73,7 +73,7 @@
                         <a class="page-scroll" href="inscription.php">Inscription</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="recherche.php"><i class="fa fa-search" aria-hidden="true"></i></a>
+                        <a class="page-scroll" href="recherche.php"><i class="fa fa-search" aria-hidden="true"></i> Recherche rapide</a>
                     </li>
                 </ul>
             </div>
