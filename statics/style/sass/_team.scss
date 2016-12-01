@@ -1,0 +1,147 @@
+/**
+ * Auteur: christopher
+ * Date: 01/12/2016
+ */
+
+
+
+.Team {
+  @include section-default;
+  background: $pseudo-white;
+
+  .Team-header {
+    @include section-header-default;
+  }
+
+  .Team-tagLine {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .Team-members {
+    width: 100%;
+
+    .Member {
+      @include display-flex(column, center, center);
+      flex: 1;
+      img {
+
+      }
+
+      .Member-name {
+        font-weight: bold;
+        font-size: 15px;
+      }
+
+      .Member-title {
+        font-style: italic;
+      }
+
+      .Member-job {
+
+      }
+
+      .Member-socials {
+        @include display-flex(row, center, center);
+        list-style: none;
+        width: 100%;
+
+        .Social {
+          width: 30px;
+          height: 30px;
+
+          margin: 0 5px;
+
+          background: #000;
+          border-radius: 15px;
+
+          transition: all 200ms ease-in;
+
+          &:hover {
+            transform: scale(1.1);
+            transition: all 200ms ease-out;
+          }
+
+          a {
+            width: 100%;
+            height: 100%;
+
+            i {
+              @include display-flex();
+
+              width: 100%;
+              height: 100%;
+
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+
+// Responsiveness
+
+// Tablet & Phone
+@media screen and (max-width: 769px) {
+  .Team {
+
+    .Team-members {
+      @include display-flex(column, center, center);
+
+      .Member {
+        width: 100%;
+        margin: 10px 0;
+        img {
+
+        }
+
+        .Member-name {
+
+        }
+
+        .Member-title {
+
+        }
+
+        .Member-job {
+
+        }
+      }
+    }
+
+  }
+}
+
+// Desktop
+@media screen and (min-width: 770px) {
+  .Team {
+
+    .Team-members {
+      @include display-flex(row, center, center);
+      margin-top: 50px;
+
+      .Member {
+        img {
+
+        }
+
+        .Member-name {
+
+        }
+
+        .Member-title {
+
+        }
+
+        .Member-job {
+
+        }
+      }
+    }
+
+  }
+}

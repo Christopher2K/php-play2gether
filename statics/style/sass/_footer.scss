@@ -8,16 +8,13 @@
 @import "__settings";
 
 .Footbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  @include display-flex(row, space-around, center);
 
   height: $fb-height;
 
   .Footbar-copyright {
     width: 33.3%;
-    text-align: left;
+    text-align: center;
 
     margin: 0;
     padding-left: 15%;

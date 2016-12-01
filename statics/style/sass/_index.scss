@@ -4,85 +4,107 @@
 
 $padding-header: 20px;
 
-.IndexHeader {
-  background: url('/statics/img/fond-texture.jpg') 100% 100%;
-  background-size: cover;
+.Index {
+  .IndexHeader {
+    background: url('/statics/img/fond-texture.jpg') 100% 100%;
+    background-size: cover;
 
-  position: relative;
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: $padding-header;
-
-  color: white;
-
-  .IndexHeader-content {
+    position: relative;
     width: 100%;
+    height: 100%;
 
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    img {
-      width: 40%;
-      min-width: 400px;
-      max-width: 500px;
-      height: auto;
-    }
+    padding: $padding-header;
 
-    h1 {
-    }
+    color: white;
 
-    p {
+    .IndexHeader-content {
+      width: 100%;
 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 40%;
+        min-width: 400px;
+        max-width: 500px;
+        height: auto;
+      }
+
+      h1 {
+      }
+
+      p {
+
+      }
     }
   }
-}
 
-// Responsiveness
-// Tablet & Phone
-@media screen and (max-width: 769px) {
-  //.IndexHeader {
-  //
-  //  .IndexHeader-content {
-  //
-  //    img {
-  //
-  //    }
-  //
-  //    h1 {
-  //
-  //    }
-  //
-  //    p {
-  //
-  //    }
-  //  }
-  //}
+  .Call2Action {
+    @include section-default();
+    background: url('/statics/img/bg-foot.jpg') center no-repeat fixed;
+    background-size: cover;
 
-}
+    .Call2Action-header {
+      @include section-header-default();
+    }
 
-// Desktop
-@media screen and (min-width: 770px) {
-  //.IndexHeader {
-  //
-  //  .IndexHeader-content {
-  //    img {
-  //
-  //    }
-  //
-  //    h1 {
-  //
-  //    }
-  //
-  //    p {
-  //
-  //    }
-  //  }
-  //}
+    .Call2Action-button {
+      @include display-flex();
+      height: 400px;
+
+      button {
+        @include button-skin();
+      }
+    }
+  }
+
+  // Responsiveness
+  // Tablet & Phone
+  @media screen and (max-width: 769px) {
+    //.IndexHeader {
+    //
+    //  .IndexHeader-content {
+    //
+    //    img {
+    //
+    //    }
+    //
+    //    h1 {
+    //
+    //    }
+    //
+    //    p {
+    //
+    //    }
+    //  }
+    //}
+
+  }
+
+  // Desktop
+  @media screen and (min-width: 770px) {
+    //.IndexHeader {
+    //
+    //  .IndexHeader-content {
+    //    img {
+    //
+    //    }
+    //
+    //    h1 {
+    //
+    //    }
+    //
+    //    p {
+    //
+    //    }
+    //  }
+    //}
+  }
+
 }

@@ -8,7 +8,7 @@
         ?>
     </head>
 
-    <body>
+    <body class="Index">
         <?php getMenu(); ?>
 
         <header class="IndexHeader">
@@ -80,52 +80,151 @@
             </div>
         </section>
 
-        <section>
-            <div>
+        <section class="Call2Action">
+            <div class="Call2Action-header">
+                <h2>Rejoignez nous maintenant</h2>
+                <hr />
+                <p>On vous attend sur les terrains prêt de chez vous.</p>
+            </div>
+
+            <div class="Call2Action-button">
+                <button><a href="">Rejoignez nous !</a></button>
+            </div>
+        </section>
+
+        <section class="Team">
+            <div class="Team-header">
                 <h2>L'Équipe</h2>
                 <hr />
-                <p></p>
+                <p>Retrouvez nous !</p>
             </div>
 
-            <div>
-                <p>Ce projet a été réalisé dans le cadre de l'UE Gestion de Projet, formation MIAGE à l'Université de Picardie de Jules Vernes</p>
+            <div class="Team-tagLine">
+                <h4>Ce projet a été réalisé dans le cadre de l'UE Gestion de Projet, formation MIAGE à l'Université de Picardie de Jules Vernes</h4>
             </div>
 
-            <div>
-                <div>
+            <div class="Team-members">
+                <div class="Member">
                     <img />
-                    <p>Remi BOISEAUBERT</p>
-                    <p>Développeur PHP</p>
-                    <p>Chef de projet</p>
+                    <p class="Member-name">Remi BOISEAUBERT</p>
+                    <p class="Member-title">Développeur PHP</p>
+                    <p class="Member-job">Chef de projet</p>
+                    <ul class="Member-socials">
+                        <li class="Social">
+                            <a href="">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="Social">
+                            <a href="">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="Social">
+                            <a href="">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
-                <div>
+                <div class="Member">
                     <img />
-                    <p>Christopher N. KATOYI-KABA</p>
-                    <p>Développeur Fullstack</p>
-                    <p>Chargé de documentation</p>
+                    <p class="Member-name">Christopher N. KATOYI-KABA</p>
+                    <p class="Member-title">Développeur Fullstack</p>
+                    <p class="Member-job">Chargé de documentation</p>
+                    <ul class="Member-socials">
+                        <li class="Social">
+                            <a href="">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="Social">
+                            <a href="">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="Social">
+                            <a href="">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
-                <div>
+                <div class="Member">
                     <img />
-                    <p>Tarek ELMARSI</p>
-                    <p>Développeur Php</p>
-                    <p>Responsable du carnet de bord</p>
+                    <p class="Member-name">Tarek ELMARSI</p>
+                    <p class="Member-title">Développeur Php</p>
+                    <p class="Member-job">Responsable du carnet de bord</p>
+                    <ul class="Member-socials">
+                        <li class="Social">
+                            <a href="">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="Social">
+                            <a href="">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="Social">
+                            <a href="">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="Team-members">
+                <div class="Member">
+                    <img />
+                    <p class="Member-name">Florian SAINT-LEGER</p>
+                    <p class="Member-title">Web designer</p>
+                    <p class="Member-job">Chargé de communication</p>
+                    <ul class="Member-socials">
+                        <li class="Social">
+                            <a href="">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="Social">
+                            <a href="">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="Social">
+                            <a href="">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                    </ul>
+
                 </div>
 
-                <div>
+                <div class="Member">
                     <img />
-                    <p>Florian SAINT-LEGER</p>
-                    <p>Web designer</p>
-                    <p>Chargé de communication</p>
-
-                </div>
-
-                <div>
-                    <img />
-                    <p>Fabien LAMOTTE</p>
-                    <p>Intégrateur front-end</p>
-                    <p>Client</p>
+                    <p class="Member-name">Fabien LAMOTTE</p>
+                    <p class="Member-title">Intégrateur front-end</p>
+                    <p class="Member-job">Client</p>
+                    <ul class="Member-socials">
+                        <li class="Social">
+                            <a href="">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="Social">
+                            <a href="">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="Social">
+                            <a href="">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>

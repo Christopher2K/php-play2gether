@@ -4,13 +4,9 @@
  */
 
 @mixin section-default {
-  padding: 20px;
-  margin: 20px 0;
+  padding: 80px 20px;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-content: center;
+  @include display-flex(column, flex-start, center);
 
   width: 100%;
 }
@@ -18,13 +14,12 @@
 @mixin section-header-default {
   width: 100%;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-content: center;
+  @include display-flex(column, flex-start, center);
 
   h2 {
     text-align: center;
+    text-transform: uppercase;
+    color: white;
   }
 
   hr {
@@ -37,8 +32,53 @@
   p {
     text-align: center;
     font-style: italic;
-    color: rgba(0, 0, 0, 0.5);
+    color: #898989;
   }
 
   margin-bottom: 50px;
+}
+
+@mixin display-flex($flex-direction: column, $justify-content: center, $align-items: center) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin button-skin () {
+  @include display-flex();
+  height: 50px;
+
+  background: $kounicova;
+  color: white;
+
+  padding: 10px 30px;
+  border: none;
+  font-weight: bold;
+  border-radius: 3px;
+
+  text-transform: uppercase;
+
+  transition: all 200ms ease-in;
+
+  a {
+    width: 100%;
+    height: 100%;
+    color: white;
+  }
+
+  &:hover {
+    background: darken($kounicova, 10%);
+    transform: scale(1.1);
+
+    transition: all 200ms ease-out;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
 }

@@ -158,10 +158,10 @@
                 <form class="Content-form">
                     <div class="Form-fields">
                         <div class="Fields-left">
-                            <input type="text" name="nom_contact" id="nom_contact" placeholder="NOM" required />
-                            <input type="text" name="prenom_contact" id="prenom_contact" placeholder="PRENOM" required />
-                            <input type="email" name="email_contact" id="email_contact" placeholder="ADRESSE MAIL" required />
-                            <input type="tel" name="telephone_contact" id="telephone_contact" placeholder="TÉLÉPHONE" required />
+                            <input type="text" name="nom_contact" id="nom_contact" placeholder="NOM &bull;" required />
+                            <input type="text" name="prenom_contact" id="prenom_contact" placeholder="PRENOM &bull;" required />
+                            <input type="email" name="email_contact" id="email_contact" placeholder="ADRESSE MAIL &bull;" required />
+                            <input type="tel" name="telephone_contact" id="telephone_contact" placeholder="TÉLÉPHONE &bull;" required />
                         </div>
 
                         <div class="Fields-right">
