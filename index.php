@@ -1,81 +1,101 @@
-<?php require('templates/layout.php') ?>
+<?php
+    require('templates/layout.php');
+    require_once('module/Connection.php');
+
+    $connection = Connection::getInstance();
+?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <?php 
+        <?php
             $title = 'Accueil';
-            getHead($title); 
+            getHead($title);
         ?>
     </head>
 
     <body class="Index">
         <?php getMenu(); ?>
 
-        <header class="IndexHeader">
-            <div class="IndexHeader-content">
+        <header class="Header">
+            <div class="Header-content">
                 <img src="/statics/img/logo.png" alt="Logo"/>
                 <h2>Trouve ton équipe et joue dès maintenant !</h2>
             </div>
         </header>
 
-        <section>
-            <div>
+        <section class="Concept">
+            <div class="Concept-header">
                 <h2>Le concept</h2>
-                <hr />
-                <p></p>
+                <hr/>
+                <p>Une nouvelle manière de pratiquer ton sport.</p>
             </div>
 
-            <div>
+            <div class="Concept-content">
                 <p>T'es du genre sportif ? Toujours prêt pour une partie de futsal, de basket ?</p>
-                <p>Tu cherches des joueurs disponibles et déterminés autour de chez toi ?</p>
-                <p>Il te manque un joueur pour compléter ta team ?</p>
+                <p>Tu recheche juste des gens avec qui courir, nager, ou pédaler ?</p>
+                <p>Tu cherches des sportifs disponibles et déterminés autour de chez toi ?</p>
+                <p>Il te manque quelqu'un pour compléter ta team ?</p>
 
-                <p>Play2Gether est fait pour toi !</p>
+                <p class="Content-bigger">Play2Gether est fait pour toi !</p>
 
-                <p>Un process simple</p>
-
-                <?php getCallToAction(); ?>
+                <button><a href="">Rejoignez nous !</a></button>
             </div>
         </section>
 
-        <section>
-            <div>
+        <section class="Games">
+            <div class="Games-header">
                 <h2>Recrutements en cours</h2>
-                <hr />
-                <p></p>
+                <hr/>
+                <p>Découvrez les sessions de sports disponibles !</p>
             </div>
 
-            <div>
-                <div>
-                    <h3>Football Américain</h3>
-                    <p><span>Lieu : </span> Amiens</p>
-                    <p><span>Date : </span> 01/01/2017</p>
-                    <p><span>Participants : </span> 10</p>
-                    <button>Rejoindre</button>
+            <div class="Games-cards">
+                <div class="Card">
+                    <div class="Card-header">
+                        <h3>Football Américan</h3>
+                    </div>
+                    <div class="Card-content">
+                        <p><span>Lieu : </span> Amiens</p>
+                        <p><span>Date : </span> 01/01/2017</p>
+                        <p><span>Participants : </span> 10</p>
+                        <button>Rejoindre</button>
+                    </div>
                 </div>
 
-                <div>
-                    <h3>Football Américain</h3>
-                    <p><span>Lieu : </span> Amiens</p>
-                    <p><span>Date : </span> 01/01/2017</p>
-                    <p><span>Participants : </span> 10</p>
-                    <button>Rejoindre</button>
+                <div class="Card">
+                    <div class="Card-header">
+                        <h3>Football Américan</h3>
+                    </div>
+                    <div class="Card-content">
+                        <p><span>Lieu : </span> Amiens</p>
+                        <p><span>Date : </span> 01/01/2017</p>
+                        <p><span>Participants : </span> 10</p>
+                        <button>Rejoindre</button>
+                    </div>
                 </div>
 
-                <div>
-                    <h3>Football Américain</h3>
-                    <p><span>Lieu : </span> Amiens</p>
-                    <p><span>Date : </span> 01/01/2017</p>
-                    <p><span>Participants : </span> 10</p>
-                    <button>Rejoindre</button>
+                <div class="Card">
+                    <div class="Card-header">
+                        <h3>Football Américan</h3>
+                    </div>
+                    <div class="Card-content">
+                        <p><span>Lieu : </span> Amiens</p>
+                        <p><span>Date : </span> 01/01/2017</p>
+                        <p><span>Participants : </span> 10</p>
+                        <button>Rejoindre</button>
+                    </div>
                 </div>
 
-                <div>
-                    <h3>Football Américain</h3>
-                    <p><span>Lieu : </span> Amiens</p>
-                    <p><span>Date : </span> 01/01/2017</p>
-                    <p><span>Participants : </span> 10</p>
-                    <button>Rejoindre</button>
+                <div class="Card">
+                    <div class="Card-header">
+                        <h3>Football Américan</h3>
+                    </div>
+                    <div class="Card-content">
+                        <p><span>Lieu : </span> Amiens</p>
+                        <p><span>Date : </span> 01/01/2017</p>
+                        <p><span>Participants : </span> 10</p>
+                        <button>Rejoindre</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -83,7 +103,7 @@
         <section class="Call2Action">
             <div class="Call2Action-header">
                 <h2>Rejoignez nous maintenant</h2>
-                <hr />
+                <hr/>
                 <p>On vous attend sur les terrains prêt de chez vous.</p>
             </div>
 
@@ -95,17 +115,18 @@
         <section class="Team">
             <div class="Team-header">
                 <h2>L'Équipe</h2>
-                <hr />
+                <hr/>
                 <p>Retrouvez nous !</p>
             </div>
 
             <div class="Team-tagLine">
-                <h4>Ce projet a été réalisé dans le cadre de l'UE Gestion de Projet, formation MIAGE à l'Université de Picardie de Jules Vernes</h4>
+                <h4>Ce projet a été réalisé dans le cadre de l'UE Gestion de Projet, formation MIAGE à l'Université de
+                    Picardie de Jules Vernes</h4>
             </div>
 
             <div class="Team-members">
                 <div class="Member">
-                    <img />
+                    <img/>
                     <p class="Member-name">Remi BOISEAUBERT</p>
                     <p class="Member-title">Développeur PHP</p>
                     <p class="Member-job">Chef de projet</p>
@@ -129,7 +150,7 @@
                 </div>
 
                 <div class="Member">
-                    <img />
+                    <img/>
                     <p class="Member-name">Christopher N. KATOYI-KABA</p>
                     <p class="Member-title">Développeur Fullstack</p>
                     <p class="Member-job">Chargé de documentation</p>
@@ -153,7 +174,7 @@
                 </div>
 
                 <div class="Member">
-                    <img />
+                    <img/>
                     <p class="Member-name">Tarek ELMARSI</p>
                     <p class="Member-title">Développeur Php</p>
                     <p class="Member-job">Responsable du carnet de bord</p>
@@ -179,7 +200,7 @@
 
             <div class="Team-members">
                 <div class="Member">
-                    <img />
+                    <img/>
                     <p class="Member-name">Florian SAINT-LEGER</p>
                     <p class="Member-title">Web designer</p>
                     <p class="Member-job">Chargé de communication</p>
@@ -204,7 +225,7 @@
                 </div>
 
                 <div class="Member">
-                    <img />
+                    <img/>
                     <p class="Member-name">Fabien LAMOTTE</p>
                     <p class="Member-title">Intégrateur front-end</p>
                     <p class="Member-job">Client</p>

@@ -5,7 +5,7 @@
 $padding-header: 20px;
 
 .Index {
-  .IndexHeader {
+  .Header {
     background: url('/statics/img/fond-texture.jpg') 100% 100%;
     background-size: cover;
 
@@ -21,7 +21,7 @@ $padding-header: 20px;
 
     color: white;
 
-    .IndexHeader-content {
+    .Header-content {
       width: 100%;
 
       display: flex;
@@ -45,6 +45,34 @@ $padding-header: 20px;
     }
   }
 
+  .Concept {
+    @include section-default();
+    background: $pseudo-white;
+
+    .Concept-header {
+      @include section-header-default();
+    }
+
+    .Concept-content {
+      @include display-flex();
+
+      p {
+        margin-bottom: 20px;
+      }
+
+      .Content-bigger {
+        margin: 40px 0;
+        font-weight: bold;
+        font-size: 25px;
+      }
+
+      button {
+        @include button-skin();
+      }
+
+    }
+  }
+
   .Call2Action {
     @include section-default();
     background: url('/statics/img/bg-foot.jpg') center no-repeat fixed;
@@ -64,47 +92,108 @@ $padding-header: 20px;
     }
   }
 
+  .Games {
+    @include section-default();
+    background: $submarine;
+
+    .Games-header {
+      @include section-header-default();
+    }
+
+    .Games-cards {
+
+      .Card {
+        margin-right: 10px;
+        max-width: 300px;
+
+        .Card-header {
+          width: 100%;
+          background: black;
+          padding: 10px 15px 20px 15px;
+          border-radius: 10px 10px 0 0;
+          color: $kounicova;
+
+          h3 {
+            text-align: center;
+          }
+        }
+
+        .Card-content {
+          width: 100%;
+
+          @include display-flex();
+          padding: 40px 15px;
+          background: white;
+          border-radius: 0 0 10px 10px;
+
+          p {
+            margin-bottom: 20px;
+            span {
+              font-weight: bold;
+            }
+          }
+
+          button {
+            @include button-skin();
+          }
+
+        }
+      }
+    }
+
+  }
+
+
   // Responsiveness
   // Tablet & Phone
   @media screen and (max-width: 769px) {
-    //.IndexHeader {
-    //
-    //  .IndexHeader-content {
-    //
-    //    img {
-    //
-    //    }
-    //
-    //    h1 {
-    //
-    //    }
-    //
-    //    p {
-    //
-    //    }
-    //  }
-    //}
 
+    .Games {
+      .Games-header {
+
+      }
+
+      .Games-cards {
+        @include display-flex(column, flex-start);
+
+        .Card {
+          margin-bottom: 20px;
+          .Card-header {
+
+          }
+
+          .Card-content {
+
+          }
+        }
+      }
+
+    }
   }
 
   // Desktop
   @media screen and (min-width: 770px) {
-    //.IndexHeader {
-    //
-    //  .IndexHeader-content {
-    //    img {
-    //
-    //    }
-    //
-    //    h1 {
-    //
-    //    }
-    //
-    //    p {
-    //
-    //    }
-    //  }
-    //}
+    .Games {
+
+      .Games-header {
+
+      }
+
+      .Games-cards {
+        @include display-flex(row, flex-start);
+
+        .Card {
+          .Card-header {
+
+          }
+
+          .Card-content {
+
+          }
+        }
+      }
+
+    }
   }
 
 }

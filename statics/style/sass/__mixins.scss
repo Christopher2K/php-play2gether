@@ -3,7 +3,14 @@
  * Date: 02/11/2016
  */
 
-@mixin section-default {
+@mixin display-flex($flex-direction: column, $justify-content: center, $align-items: center) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin section-default() {
   padding: 80px 20px;
 
   @include display-flex(column, flex-start, center);
@@ -11,15 +18,15 @@
   width: 100%;
 }
 
-@mixin section-header-default {
+@mixin section-header-default($title-color: white) {
   width: 100%;
 
   @include display-flex(column, flex-start, center);
 
-  h2 {
+  h1, h2 {
     text-align: center;
     text-transform: uppercase;
-    color: white;
+    color: $title-color;
   }
 
   hr {
@@ -38,16 +45,12 @@
   margin-bottom: 50px;
 }
 
-@mixin display-flex($flex-direction: column, $justify-content: center, $align-items: center) {
-  display: flex;
-  flex-direction: $flex-direction;
-  justify-content: $justify-content;
-  align-items: $align-items;
-}
-
 @mixin button-skin () {
-  @include display-flex();
+  @include display-flex(row);
+
   height: 50px;
+  min-height: 50px;
+  max-height: 50px;
 
   background: $kounicova;
   color: white;

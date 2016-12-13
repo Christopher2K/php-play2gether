@@ -9,6 +9,7 @@
 
 .Footbar {
   @include display-flex(row, space-around, center);
+  background: white;
 
   height: $fb-height;
 

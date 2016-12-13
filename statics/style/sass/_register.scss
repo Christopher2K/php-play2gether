@@ -1,0 +1,125 @@
+@import "__colors";
+@import "__mixins";
+@import "__settings";
+
+.RegisterIndex {
+  background-color: $half-back;
+
+  .Register {
+    @include section-default();
+    padding-top: 0;
+    margin-top: 100px;
+    background: url('/statics/img/fond-contact.png') $half-back no-repeat center center;
+    background-size: contain;
+
+    .Register-header {
+      @include section-header-default();
+    }
+
+    .Register-content {
+      @include display-flex();
+      width: 100%;
+
+      .Form {
+        width: 100%;
+        @include display-flex();
+
+        .Field-group {
+          width: 80%;
+
+          .Fields-left, .Fields-right {
+            width: 100%;
+
+            .Form-group {
+              @include display-flex(column, flex-start, flex-start);
+              width: 100%;
+              margin-bottom: 15px;
+
+              label {
+                margin-bottom: 10px;
+                font-weight: bold;
+                color: #FFF;
+              }
+
+              input, select {
+                color: white;
+                font-weight: bold;
+                padding: 5px 20px;
+
+                height: 55px;
+                width: 100%;
+
+                box-shadow: inset 0 0 2px 0 rgba(0,0,0,0.75);
+                border-radius: 5px;
+                border: 1px solid transparent;
+
+                background: rgba(0, 0, 0, 0.75);
+
+                transition: all 250ms ease-in;
+
+                &:focus {
+                  outline: none;
+                  border-color: $kounicova;
+                  box-shadow: none;
+                  background: rgba(0, 0, 0, 0.20);
+
+                  transition: all 250ms ease-out;
+                }
+              }
+            }
+          }
+
+          .Fields-left {
+            align-items: flex-start;
+            padding-right: 2%;
+          }
+
+          .Fields-right {
+            padding-left: 2%;
+          }
+        }
+
+        .Fields-center {
+          @include display-flex();
+          width: 100%;
+          margin: 50px 0;
+
+          button {
+            @include button-skin();
+          }
+        }
+      }
+    }
+  }
+
+  // Responsiveness
+  // Tablet & Phone
+  @media screen and (max-width: 769px) {
+    .Register-content {
+      .Form {
+        .Field-group {
+          @include display-flex(column, flex-start, center);
+
+          .Fields-left, .Fields-right {
+            margin: 20px 0;
+          }
+        }
+      }
+    }
+  }
+
+  // Desktop
+  @media screen and (min-width: 770px) {
+    .Register-content {
+      .Form {
+        .Field-group {
+          @include display-flex(row, flex-start, flex-start);
+
+          .Fields-left, .Fields-right {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}

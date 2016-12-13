@@ -69,11 +69,10 @@
                     <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
                 </div>
                 <ul class="Navbar-items">
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Annonces</a></li>
-                    <li><a href="#">Résultat</a></li>
-                    <li><a href="#">Inscription</a></li>
-                    <li><a href="#">Connexion</a></li>
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/annonces.php">Annonces</a></li>
+                    <li><a href="/inscription.php">Inscription</a></li>
+                    <li><a href="/connexion.php">Connexion</a></li>
 <!--                    <li id="toogle-search"><i class="Search-icon fa fa-search"></i></li>-->
                 </ul>
             </nav>
