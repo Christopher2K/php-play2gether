@@ -50,7 +50,7 @@ require('templates/layout.php');
 
                     <div class="Form-group">
                         <label>VILLE</label>
-                        <select name="city"></select>
+                        <select name="city" required></select>
                     </div>
                 </div>
 
@@ -69,11 +69,6 @@ require('templates/layout.php');
                         <label>CONFIRMATION DE MOT DE PASSE</label>
                         <input type="password" name="password_confirm" required/>
                     </div>
-
-                    <div class="Form-group">
-                        <label>SPORT PREFERÉ</label>
-                        <select></select>
-                    </div>
                 </div>
             </div>
 
@@ -88,7 +83,9 @@ require('templates/layout.php');
 <?php getFooter(); ?>
 
 <?php getScripts(); ?>
+<!-- Lib -->
 <!-- Script custom -->
+<script src="/statics/script/register.js"></script>
 
 </body>
 </html>
