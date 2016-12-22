@@ -913,6 +913,26 @@ section#annonce {
   height: 100vh;
 }
 
+section#annonceSport {
+  background-color: #222222;
+  background-image: url('../img/fond-texture.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: white;
+  height: 100vh;
+}
+
+section#annonceSport h3{
+  color: white;
+}
+
+section#annonceSport .auteur{
+  color: #fed136;
+}
+
 form#searchgame input, select, textarea {
   width:100%;
   height: 60px;
