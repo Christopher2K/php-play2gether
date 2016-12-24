@@ -1,5 +1,12 @@
 <?php
 require('templates/layout.php');
+require('module/Session.php');
+
+$session = Session::getInstance();
+
+if ($session->userIsLogged()) {
+    header ('Location: profil.php');
+}
 
 ?>
 <!DOCTYPE html>
@@ -12,7 +19,7 @@ require('templates/layout.php');
 </head>
 
 <body class="RegisterIndex">
-<?php getMenu(); ?>
+<?php getMenu($session); ?>
 
 <section class="Register">
     <div class="Register-header">
@@ -47,11 +54,6 @@ require('templates/layout.php');
                         <label>DATE DE NAISSANCE</label>
                         <input type="date" name="birth_date" required/>
                     </div>
-
-                    <div class="Form-group">
-                        <label>VILLE</label>
-                        <select name="city" required></select>
-                    </div>
                 </div>
 
                 <div class="Fields-right">
@@ -69,10 +71,26 @@ require('templates/layout.php');
                         <label>CONFIRMATION DE MOT DE PASSE</label>
                         <input type="password" name="password_confirm" required/>
                     </div>
+
+                    <div class="Form-group">
+                        <label>VILLE</label>
+                        <select name="city" required></select>
+                    </div>
                 </div>
             </div>
 
             <div class="Fields-center">
+                <div class="alert alert-danger mail_error hidden">
+                    <strong>Erreur !</strong> L'adresse mail entrée est déjà utilisée.
+                </div>
+
+                <div class="alert alert-danger password_error hidden">
+                    <strong>Erreur !</strong> Les mots de passe ne sont pas identiques.
+                </div>
+
+                <div class="alert alert-danger server_error hidden">
+                    <strong>Erreur !</strong> Quelque chose s'est mal passé. Contactez nous.
+                </div>
                 <button type="submit">S'inscrire !</button>
             </div>
         </form>
@@ -85,7 +103,8 @@ require('templates/layout.php');
 <?php getScripts(); ?>
 <!-- Lib -->
 <!-- Script custom -->
-<script src="/statics/script/register.js"></script>
+<script src="/statics/script/city-service.js"></script>
+<script src="/statics/script/register-service.js"></script>
 
 </body>
 </html>

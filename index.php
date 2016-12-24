@@ -1,7 +1,9 @@
 <?php
-    require('templates/layout.php');
+    require_once('module/Session.php');
+    require_once('templates/layout.php');
     require_once('module/Connection.php');
 
+    $session = Session::getInstance();
     $connection = Connection::getInstance();
 ?>
 <!DOCTYPE html>
@@ -14,7 +16,7 @@
     </head>
 
     <body class="Index">
-        <?php getMenu(); ?>
+        <?php getMenu($session); ?>
 
         <header class="Header">
             <div class="Header-content">
@@ -38,7 +40,7 @@
 
                 <p class="Content-bigger">Play2Gether est fait pour toi !</p>
 
-                <button><a href="">Rejoignez nous !</a></button>
+                <button><a href="inscription.php">Rejoignez nous !</a></button>
             </div>
         </section>
 
@@ -108,7 +110,7 @@
             </div>
 
             <div class="Call2Action-button">
-                <button><a href="">Rejoignez nous !</a></button>
+                <button><a href="inscription.php">Rejoignez nous !</a></button>
             </div>
         </section>
 

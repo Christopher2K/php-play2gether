@@ -8,69 +8,55 @@
  */
 class UserDAO
 {
-    private $dbh;
-    private $selectAll;
-    private $selectByID;
-    private $selectByPseudo;
-    private $update;
-    private $insertUser;
-    private $loginQuery;
+    static $SELECT_ALL = "SELECT * FROM user";
+    static $INSERT = "INSERT INTO user(NOM, PRENOM, SEXE, DATE_NAISSANCE, PASSWORD, EMAIL, ID_VILLE) VALUES (?,?,?,?,?,?,?)";
+    static $SELECT_BY_ID = "SELECT * FROM user WHERE user.ID_USER=?";
+    static $SELECT_BY_EMAIL = "SELECT * FROM user WHERE user.EMAIL=?";
+
+    private $db;
+    private $queries = [
+        'selectAll' => "",
+        'selectById' => "",
+        'selectByEmail' => "",
+        'insert' => ""
+    ];
 
     /**
      * UserDAO constructor.
      */
-    public function __construct($dbh)
+    public function __construct($db)
     {
-        $this->dbh = $dbh;
-        $this->selectAll = $this->dbh->prepare("SELECT * FROM User");
-        $this->insertUser = $this->dbh->prepare("INSERT INTO user(NOM, PRENOM, SEXE, DATE_NAISSANCE, PASSWORD, EMAIL, ID_VILLE) 
-                                               VALUES (?,?,?,?,?,?,?)");
+        $this->db = $db;
 
-        $this->selectByID = $this->dbh->prepare("SELECT * FROM User WHERE USER.ID_USER=?");
-        $this->selectByPseudo = $this->dbh->prepare("SELECT * FROM User WHERE USER.NOM=?");
-        $this->update = $this->dbh->prepare("UPDATE FROM User SET
-                                          nom=?,prenom=?,sexe=?,
-                                           date_naissance=?,password=?
-                                           WHERE ID_USER=?");
-
-        $this->loginQuery = $this->dbh->prepare("SELECT * FROM User
-                                         WHERE pseudo=?");
-
-
+        $this->queries['selectAll'] = $this->db->prepare(UserDAO::$SELECT_ALL);
+        $this->queries['selectById'] = $this->db->prepare(UserDAO::$SELECT_BY_ID);
+        $this->queries['selectByEmail'] = $this->db->prepare(UserDAO::$SELECT_BY_EMAIL);
+        $this->queries['insert'] = $this->db->prepare(UserDAO::$INSERT);
     }
 
-
-    public function login($userName)
-    {
-        $user = $this->loginQuery->execute([$userName]);
-
-        return $this->loginQuery->fetchAll(\PDO::FETCH_ASSOC);
-    }
-
-    public function getDbh()
-    {
-        var_dump($this->dbh);
-    }
+    /**
+     * Functions DAO
+     */
 
     public function selectAll()
     {
-        $this->selectAll->execute();
-        return $this->selectAll->fetchAll(\PDO::FETCH_ASSOC);
+        $this->queries['selectAll']->execute();
+        return $this->queries['selectAll']->fetchAll(\PDO::FETCH_ASSOC);
     }
 
     public function selectByID($userID)
     {
-        $this->selectByID->execute([$userID]);
-        return $this->selectByID->fetchAll(\PDO::FETCH_ASSOC);
+        $this->queries['selectById']->execute([$userID]);
+        return $this->queries['selectById']->fetchAll(\PDO::FETCH_ASSOC);
     }
 
-    public function selectByPseudo($pseudo)
+    public function selectByEmail($email)
     {
-        $this->selectByPseudo->execute([$pseudo]);
-        return $this->selectByPseudo->fetchAll(\PDO::FETCH_ASSOC);
+        $this->queries['selectByEmail']->execute([$email]);
+        return $this->queries['selectByEmail']->fetchAll(\PDO::FETCH_ASSOC);
     }
 
-    public function insertUser($user)
+    public function insertUser(User $user)
     {
         $nom = $user->getNom();
         $prenom = $user->getPrenom();
@@ -79,16 +65,32 @@ class UserDAO
         $password = UserDAO::hashPassword($user->getPassword());
         $idVille = $user->getIdVille();
         $email = $user->getEmail();
-        $insertCount = $this->insertUser->execute([$nom, $prenom, $sexe, $dateNaissance, $password, $email, $idVille]);
+
+        $insertCount = $this->queries['insert']->execute([$nom, $prenom, $sexe, $dateNaissance, $password, $email, $idVille]);
 
         return $insertCount;
     }
 
-    //Fonction de cryptage du mot de passe
+    public function logIn($email, $password)
+    {
+        $user = new User($this->selectByEmail($email)[0]);
+
+        if ($user) {
+            if (password_verify($password, $user->getPassword())) {
+                return $user;
+            }
+        }
+        return false;
+    }
+
+
+    /**
+     * Other functions
+     */
+
     public static function hashPassword($password)
     {
         return password_hash($password, PASSWORD_BCRYPT);
-
     }
 
 

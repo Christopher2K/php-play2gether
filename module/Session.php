@@ -34,5 +34,8 @@ class Session
     public function destroySession($key){
         unset($_SESSION[$key]);
     }
+
+    public function userIsLogged() {
+        return isset($_SESSION['user']);
+    }
 }
-?>

@@ -3,39 +3,13 @@
  */
 
 $(function () {
-    // Ajax request for cities
-    $('select[name="city"]').select2({
-        ajax: {
-            url: '/services/GetVillesService.php',
-            dataType: 'json',
-            data: function (params) {
-                var query = {
-                    search: params.term,
-                };
-                return query;
-            },
-            processResults: function (data) {
-                var resultats = data.map(function (item) {
-                    return {
-                        id: item.ville_id,
-                        text: item.ville_nom_reel
-                    };
-                });
-                return {
-                    results: resultats
-                };
-            }
-        },
-
-        minimumInputLength: 1,
-    });
-
     // Verification du formulaire
     function formIsValid() {
         return $('input[name="password"]').val() == $('input[name="password_confirm"]').val();
     }
 
     $('#registerForm').submit(function (event) {
+        $('.alert').addClass('hidden');
         event.preventDefault();
 
         if (formIsValid()) {
@@ -54,9 +28,24 @@ $(function () {
                 method: 'POST',
                 data: user,
                 complete: function (data) {
-                    console.log(data);
+                    var response = data.responseJSON;
+
+                    switch (response.status) {
+                        case 'success':
+                            document.location.href = 'profil.php';
+                            break;
+                        case 'user_already_exists':
+                            $('.mail_error').removeClass('hidden');
+                            break;
+                        case 'error':
+                            $('.server_error').removeClass('hidden');
+                            break;
+                    }
                 }
             });
+        }
+        else {
+            $('.password_error').removeClass('hidden');
         }
     });
 

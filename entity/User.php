@@ -33,7 +33,7 @@ class User
      */
     public function hydrate($data) {
         foreach ($data as $key => $value) {
-            $setter = $key;
+            $setter = strtolower($key);
             $method = '';
 
             if (strpos($setter, '_')) {

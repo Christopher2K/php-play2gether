@@ -1,8 +1,14 @@
 <?php
-require('templates/layout.php');
+require_once('templates/layout.php');
+require_once('module/Session.php');
 require_once('module/Connection.php');
 
-$connection = Connection::getInstance();
+$session = Session::getInstance();
+
+if ($session->userIsLogged()) {
+    header ('Location: profil.php');
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -14,7 +20,7 @@ $connection = Connection::getInstance();
 </head>
 
 <body class="LoginIndex">
-<?php getMenu(); ?>
+<?php getMenu($session); ?>
 
 <section class="Login">
     <div class="Login-header">
@@ -29,12 +35,20 @@ $connection = Connection::getInstance();
 
                 <div class="Form-group">
                     <label>ADRESSE E-MAIL</label>
-                    <input type="email" name="email_adress" required/>
+                    <input type="email" name="email" required/>
                 </div>
 
                 <div class="Form-group">
                     <label>MOT DE PASSE</label>
                     <input type="password" name="password" required/>
+                </div>
+
+                <div class="alert alert-danger not_found hidden">
+                    <strong>Erreur !</strong> Adresse mail ou mot de passe incorrect.
+                </div>
+
+                <div class="alert alert-danger server_error hidden">
+                    <strong>Erreur !</strong> Quelque chose s'est mal passé. Contactez nous.
                 </div>
 
                 <button type="submit" class="Connexion-submit">Se connecter</button>
@@ -49,6 +63,7 @@ $connection = Connection::getInstance();
 
 <?php getScripts(); ?>
 <!-- Script custom -->
+<script src="statics/script/login-service.js"></script>
 
 </body>
 </html>

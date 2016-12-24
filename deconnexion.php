@@ -1,7 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: christopher
- * Date: 12/12/2016
- * Time: 22:23
- */
+require_once('module/Session.php');
+Session::getInstance()->destroySession('user');
+
+header('Location: index.php');

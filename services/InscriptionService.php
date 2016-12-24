@@ -12,7 +12,6 @@ $connection = Connection::getInstance();
 $user_dao = new UserDAO($connection);
 
 // Declarations
-
 $data = [
     'id_ville'       => $_POST['city'],
     'email'          => $_POST['email'],
@@ -27,15 +26,17 @@ $data = [
 $user = new User($data);
 $response = [];
 
-if ($user_dao->insertUser($user)) {
-    $response['status'] = 'success';
-
-    //Log-in
-    $session->writeSession('user', $user);
+if ($user_dao->selectByEmail($data['email'])) {
+    $response['status'] = 'user_already_exists';
 } else {
-    $response['status'] = 'error';
+    if ($user_dao->insertUser($user)) {
+        //Log-in
+        $response['status'] = 'success';
+        $session->writeSession('user', $user_dao->logIn($data['email'], $data['password']));
+    } else {
+        $response['status'] = 'error';
+    }
 }
-
 
 // Return
 header('Content-type: application/json; charset=utf-8');
