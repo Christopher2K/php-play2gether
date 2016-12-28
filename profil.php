@@ -2,20 +2,22 @@
 require('templates/layout.php');
 require('module/Connection.php');
 require('module/Session.php');
+
 require('dao/CityDAO.php');
-require('entity/User.php');
 require('entity/City.php');
+
+require('entity/User.php');
 
 $connexion = Connection::getInstance();
 $session = Session::getInstance();
-$ville_dao = new VilleDAO($connexion);
+$city_dao = new CityDAO($connexion);
 
 $user = '';
-$user_ville = '';
+$user_city = '';
 
 if ($session->userIsLogged()) {
     $user = $session->readSession('user');
-    $user_ville = new Ville($ville_dao->selectByID($user->getIdVille())[0]);
+    $user_city = $city_dao->select(['id_city' => $user->getCityFk()])[0];
 } else {
     header('Location: connexion.php');
 }
@@ -47,8 +49,8 @@ if ($session->userIsLogged()) {
             </div>
             <div class="Identity-infos">
                 <h1>Hello !</h1>
-                <h2><?php echo $user->getPrenom(); ?><?php echo strtoupper($user->getNom()); ?></h2>
-                <p>Tu es actif dans la ville de <strong><?php echo $user_ville->getNom(); ?></strong>. </p>
+                <h2><?php echo $user->getFirstName(); ?><?php echo strtoupper($user->getLastName()); ?></h2>
+                <p>Tu es actif dans la ville de <strong><?php echo $user_city->getName(); ?></strong>. </p>
             </div>
         </div>
 

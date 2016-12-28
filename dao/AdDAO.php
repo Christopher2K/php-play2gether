@@ -1,6 +1,6 @@
 <?php
 
-require_once('../abstract/DAO.php');
+require_once(__DIR__.'/../abstract/DAO.php');
 
 class AdDAO extends DAO {
 

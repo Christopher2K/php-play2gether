@@ -1,7 +1,7 @@
 <?php
-    require_once('module/Session.php');
-    require_once('templates/layout.php');
-    require_once('module/Connection.php');
+    require_once(__DIR__.'/module/Session.php');
+    require_once(__DIR__.'/templates/layout.php');
+    require_once(__DIR__.'/module/Connection.php');
 
     $session = Session::getInstance();
     $connection = Connection::getInstance();

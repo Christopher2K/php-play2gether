@@ -1,7 +1,3 @@
-/**
- * Created by christopher on 20/12/2016.
- */
-
 $(function () {
     // Verification du formulaire
     function formIsValid() {

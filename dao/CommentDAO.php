@@ -1,6 +1,6 @@
 <?php
-require_once('../abstract/DAO.php');
-require_once('../entity/Comment.php');
+require_once(__DIR__.'/../abstract/DAO.php');
+require_once(__DIR__.'/../entity/Comment.php');
 
 class CommentDAO extends DAO {
 

@@ -1,6 +1,6 @@
 <?php
-require_once('../abstract/DAO.php');
-require_once('../entity/Sport.php');
+require_once(__DIR__.'/../abstract/DAO.php');
+require_once(__DIR__.'/../entity/Sport.php');
 
 class SportDAO extends DAO {
 

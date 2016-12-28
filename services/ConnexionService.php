@@ -1,8 +1,8 @@
 <?php
-require_once('../module/Connection.php');
-require_once('../module/Session.php');
-require_once('../entity/User.php');
-require_once('../dao/UserDAO.php');
+require_once(__DIR__.'/../module/Connection.php');
+require_once(__DIR__.'/../module/Session.php');
+require_once(__DIR__.'/../entity/User.php');
+require_once(__DIR__.'/../dao/UserDAO.php');
 
 // Session
 $session = Session::getInstance();

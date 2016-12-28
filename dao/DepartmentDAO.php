@@ -1,6 +1,6 @@
 <?php
-require_once('../abstract/DAO.php');
-require_once('../entity/Department.php');
+require_once(__DIR__.'/../abstract/DAO.php');
+require_once(__DIR__.'/../entity/Department.php');
 
 class DepartmentDAO extends DAO {
 

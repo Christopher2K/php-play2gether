@@ -1,7 +1,7 @@
 <?php
-require_once('../module/Connection.php');
-require_once('../dao/CityDAO.php');
-require_once('../entity/City.php');
+require_once(__DIR__.'/../module/Connection.php');
+require_once(__DIR__.'/../dao/CityDAO.php');
+require_once(__DIR__.'/../entity/City.php');
 
 // Db Things
 $connection = Connection::getInstance();
