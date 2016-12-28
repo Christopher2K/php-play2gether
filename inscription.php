@@ -104,7 +104,7 @@ if ($session->userIsLogged()) {
 <!-- Lib -->
 <!-- Script custom -->
 <script src="/statics/script/city-service.js"></script>
-<script src="/statics/script/register-service.js"></script>
+<script src="/statics/script/registration-service.js"></script>
 
 </body>
 </html>

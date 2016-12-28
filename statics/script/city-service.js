@@ -10,14 +10,14 @@ $(function () {
                 return query;
             },
             processResults: function (data) {
-                var resultats = data.map(function (item) {
+                var resultat = data.map(function (item) {
                     return {
-                        id: item.ville_id,
-                        text: item.ville_nom_reel
+                        id: item.id_city,
+                        text: item.name,
                     };
                 });
                 return {
-                    results: resultats
+                    results: resultat
                 };
             }
         },
