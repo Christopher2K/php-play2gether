@@ -935,6 +935,14 @@ form#searchgame label {
   color: #FFF;
 }
 
+
+
+.lessports a button {
+  background-color: #222222;
+  width: 100%;
+  margin-bottom: 3%;
+}
+
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
 
 body {
@@ -967,7 +975,7 @@ div.table-title {
 /*** Table Styles **/
 
 .table-fill {
-  margin-top: 10%;
+  margin-top: 15%;
   margin-left: 10%;
   margin-bottom: 5%;
   background: white;

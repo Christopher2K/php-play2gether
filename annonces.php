@@ -19,7 +19,7 @@
             <div class="col-sm-2 col-md-offset-1">
                <div class="form-group">
                   <label>Date</label>
-                  <input type="date" class="form-control" id="date" required>
+                  <input type="date" class="form-control" id="date" placeholder="jj/mm/aaaa"required>
                   <p class="help-block text-danger"></p>
                </div>
             </div>
@@ -171,11 +171,44 @@
       </form>
       </div>
    </div>
+
 </section>
 <div class="col-lg-12 text-center">
    <h2 class="section-heading">Les rencontres</h2>
    <hr />
    <h3 class="section-subheading text-muted">Retrouves toutes les annonces "Football"</h3>
+</div>
+<div class="col-md-12 lessports">
+<div class="col-md-2">
+    <div class="sport">
+        <a href="#"><button type="button" class="btn btn-outline-secondary btn-xl">Football </button></a>
+    </div>
+</div>
+<div class="col-md-2">
+    <div class="sport">
+        <a href="#"><button type="button" class="btn btn-outline-secondary btn-xl">Tennis </button></a>
+    </div>
+</div>
+<div class="col-md-2">
+    <div class="sport">
+        <a href="#"><button type="button" class="btn btn-outline-secondary btn-xl">Football US </button></a>
+    </div>
+</div>
+<div class="col-md-2">
+    <div class="sport">
+        <a href="#"><button type="button" class="btn btn-outline-secondary btn-xl">Running</button></a>
+    </div>
+</div>
+<div class="col-md-2">
+    <div class="sport">
+        <a href="#"><button type="button" class="btn btn-outline-secondary btn-xl">Badminton</button></a>
+    </div>
+</div>
+<div class="col-md-2">
+    <div class="sport">
+        <a href="#"><button type="button" class="btn btn-outline-secondary btn-xl">Pétanque</button></a>
+    </div>
+</div>
 </div>
 <table class="table-fill">
    <thead>
