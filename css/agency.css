@@ -1171,7 +1171,7 @@ section#login label {
   color: white;
 }
 
-input[type="text"], input[type="email"], input[type="file"], input[type="password"], input[type="tel"], input[type="date"], select, textarea{
+input[type="text"], input[type="email"], input[type="file"], input[type="password"], input[type="tel"], input[type="date"], input[type="number"], select, textarea{
   width:50%;
   height: 60px;
   padding:15px 0px 15px 8px;
@@ -1219,6 +1219,19 @@ input[type="text"], input[type="email"], input[type="file"], input[type="passwor
   position:fixed;
   right:3%;
   top:0px;
+}
+
+.description-annonce textarea{
+  height: 200px;
+  padding:15px 0px 15px 8px;
+  border-radius:5px;
+  box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);
+  background:rgba(0,0,0,0.7);
+  @include disable;
+  border:1px solid rgba(0,0,0,1);
+  margin-bottom:10px;
+  color:white;
+  text-shadow:#000 0px 1px 5px;
 }
 
 /* Contact us */ 
