@@ -1,136 +1,53 @@
 <?php
+require_once('../abstract/Entity.php');
 
-/**
- * Created by PhpStorm.
- * User: EL MARSSI Tarek
- * Date: 14/12/2016
- * Time: 10:56
- */
-class Notification
-{
-    private $notificationID;
-    private $typeID;
-    private $userID;
-    private $description;
-    private $dateNotif;
-    private $isVue;
+class Notification extends Entity {
 
-    /**
-     * Notification constructor.
-     * @param $notificationID
-     * @param $typeID
-     * @param $userID
-     * @param $description
-     * @param $dateNotif
-     * @param $isVue
-     */
-    public function __construct($notificationID, $typeID, $userID, $description, $dateNotif, $isVue=false)
-    {
-        $this->notificationID = $notificationID;
-        $this->typeID = $typeID;
-        $this->userID = $userID;
-        $this->description = $description;
-        $this->dateNotif = $dateNotif;
-        $this->isVue = $isVue;
+    private $id_notification;
+    private $user_fk;
+    private $content;
+    private $created_on;
+    private $is_new;
+
+    // GETTERS & SETTERS
+
+    public function getIdNotification() {
+        return $this->id_notification;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getNotificationID()
-    {
-        return $this->notificationID;
+    public function setIdNotification($id_notification) {
+        $this->id_notification = $id_notification;
     }
 
-    /**
-     * @param mixed $notificationID
-     */
-    public function setNotificationID($notificationID)
-    {
-        $this->notificationID = $notificationID;
+    public function getUserFk() {
+        return $this->user_fk;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getTypeID()
-    {
-        return $this->typeID;
+    public function setUserFk($user_fk) {
+        $this->user_fk = $user_fk;
     }
 
-    /**
-     * @param mixed $typeID
-     */
-    public function setTypeID($typeID)
-    {
-        $this->typeID = $typeID;
+    public function getContent() {
+        return $this->content;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getUserID()
-    {
-        return $this->userID;
+    public function setContent($content) {
+        $this->content = $content;
     }
 
-    /**
-     * @param mixed $userID
-     */
-    public function setUserID($userID)
-    {
-        $this->userID = $userID;
+    public function getCreatedOn() {
+        return $this->created_on;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getDescription()
-    {
-        return $this->description;
+    public function setCreatedOn($created_on) {
+        $this->created_on = $created_on;
     }
 
-    /**
-     * @param mixed $description
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
+    public function getIsNew() {
+        return $this->is_new;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getDateNotif()
-    {
-        return $this->dateNotif;
+    public function setIsNew($is_new) {
+        $this->is_new = $is_new;
     }
-
-    /**
-     * @param mixed $dateNotif
-     */
-    public function setDateNotif($dateNotif)
-    {
-        $this->dateNotif = $dateNotif;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isIsVue()
-    {
-        return $this->isVue;
-    }
-
-    /**
-     * @param boolean $isVue
-     */
-    public function setIsVue($isVue)
-    {
-        $this->isVue = $isVue;
-    }
-
-
-
-
 }

@@ -1,7 +1,7 @@
 $(function () {
     $('select[name="city"]').select2({
         ajax: {
-            url: '/services/GetVillesService.php',
+            url: '/services/GetCityService.php',
             dataType: 'json',
             data: function (params) {
                 var query = {

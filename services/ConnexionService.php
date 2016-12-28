@@ -13,24 +13,23 @@ $user_dao = new UserDAO($connection);
 
 // Declarations
 $data = [
-    'email'          => $_POST['email'],
-    'password'       => $_POST['password'],
+    'email'    => $_POST[ 'email' ],
+    'password' => $_POST[ 'password' ],
 ];
 
 // Connexion
 $response = [];
 
-if ($user_dao->selectByEmail($data['email'])) {
-    $user = $user_dao->logIn($data['email'], $data['password']);
-
+if ($user_dao->select(['email' => $data[ 'email' ]])) {
+    $user = $user_dao->logIn($data[ 'email' ], $data[ 'password' ]);
     if ($user) {
-        $response['status'] = 'success';
+        $response[ 'status' ] = 'success';
         $session->writeSession('user', $user);
     } else {
-        $response['status'] = 'not_found';
+        $response[ 'status' ] = 'not_found';
     }
 } else {
-    $response['status'] = 'not_found';
+    $response[ 'status' ] = 'not_found';
 }
 
 // Return

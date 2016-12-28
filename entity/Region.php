@@ -1,60 +1,27 @@
 <?php
+require_once('../abstract/Entity.php');
 
-/**
- * Created by PhpStorm.
- * User: EL MARSSI Tarek
- * Date: 14/12/2016
- * Time: 10:46
- */
-class Region
-{
-    private $regionID;
-    private $libelle;
+class Region extends Entity {
 
-    /**
-     * Region constructor.
-     * @param $regionID
-     * @param $libelle
-     */
-    public function __construct($regionID, $libelle)
-    {
-        $this->regionID = $regionID;
-        $this->libelle = $libelle;
+    private $id_region;
+    private $name;
+
+    // GETTERS & SETTERS
+
+    public function getIdRegion() {
+        return $this->id_region;
     }
 
-
-    /**
-     * @return mixed
-     */
-    public function getRegionID()
-    {
-        return $this->regionID;
+    public function setIdRegion($id_region) {
+        $this->id_region = $id_region;
     }
 
-    /**
-     * @param mixed $regionID
-     */
-    public function setRegionID($regionID)
-    {
-        $this->regionID = $regionID;
+    public function getName() {
+        return $this->name;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getLibelle()
-    {
-        return $this->libelle;
+    public function setName($name) {
+        $this->name = $name;
     }
-
-    /**
-     * @param mixed $libelle
-     */
-    public function setLibelle($libelle)
-    {
-        $this->libelle = $libelle;
-    }
-
-
 
 }

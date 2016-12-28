@@ -1,197 +1,126 @@
 <?php
+require_once('../abstract/Entity.php');
 
-/**
- * Created by PhpStorm.
- * User: EL MARSSI Tarek
- * Date: 07/12/2016
- * Time: 09:37
- */
-class User
-{
+class User extends Entity {
+
     private $id_user;
-    private $is_admin;
-    private $id_ville;
-    private $nom;
-    private $prenom;
+    private $first_name;
+    private $last_name;
+    private $gender;
+    private $birth_date;
+    private $city_fk;
     private $email;
     private $password;
-    private $sexe;
-    private $date_naissance;
+    private $is_admin;
+    private $date_joigned;
 
-    /**
-     * User constructor.
-     */
-    public function __construct($data) {
-        if (isset($data)) {
-            $this->hydrate($data);
-        }
+    public static function hashPassword($password) {
+        return password_hash($password, PASSWORD_BCRYPT);
     }
 
-    /**
-     * User Hydratation
-     * @param $data
-     */
-    public function hydrate($data) {
-        foreach ($data as $key => $value) {
-            $setter = strtolower($key);
-            $method = '';
+    public function toArray($option) {
+        $array['last_name'] = $this->last_name;
+        $array['first_name'] = $this->first_name;
+        $array['gender'] = $this->gender;
+        $array['birth_date'] = $this->birth_date;
+        $array['city_fk'] = $this->city_fk;
+        $array['email'] = $this->email;
+        $array['password'] = $this->password;
 
-            if (strpos($setter, '_')) {
-                $first = ucfirst(strstr($setter, '_', true));
-                $last = ucfirst(substr(strstr($setter, '_'), 1));
-                $method = 'set' . $first . $last;
-            } else {
-                $method = 'set' . ucfirst($setter);
-            }
-            if (method_exists($this, $method)) {
-                $this->$method($value);
-            }
+        switch ($option) {
+            case 'update':
+                $array['id_user'] = $this->id_user;
+                $array['$is_admin'] = $this->is_admin;
+                break;
+            case 'create':
+                $array['password'] = User::hashPassword($this->password);
+                break;
+            default:
+                break;
         }
+
+        return $array;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getIdUser()
-    {
+    // GETTERS & SETTERS
+
+    public function getIdUser() {
         return $this->id_user;
     }
 
-    /**
-     * @param mixed $id_user
-     */
-    public function setIdUser($id_user)
-    {
+    public function setIdUser($id_user) {
         $this->id_user = $id_user;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getIsAdmin()
-    {
-        return $this->is_admin;
+    public function getFirstName() {
+        return $this->first_name;
     }
 
-    /**
-     * @param mixed $is_admin
-     */
-    public function setIsAdmin($is_admin)
-    {
-        $this->is_admin = $is_admin;
+    public function setFirstName($first_name) {
+        $this->first_name = $first_name;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getIdVille()
-    {
-        return $this->id_ville;
+    public function getLastName() {
+        return $this->last_name;
     }
 
-    /**
-     * @param mixed $id_ville
-     */
-    public function setIdVille($id_ville)
-    {
-        $this->id_ville = $id_ville;
+    public function setLastName($last_name) {
+        $this->last_name = $last_name;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getNom()
-    {
-        return $this->nom;
+    public function getGender() {
+        return $this->gender;
     }
 
-    /**
-     * @param mixed $nom
-     */
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
+    public function setGender($gender) {
+        $this->gender = $gender;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getPrenom()
-    {
-        return $this->prenom;
+    public function getBirthDate() {
+        return $this->birth_date;
     }
 
-    /**
-     * @param mixed $prenom
-     */
-    public function setPrenom($prenom)
-    {
-        $this->prenom = $prenom;
+    public function setBirthDate($birth_date) {
+        $this->birth_date = $birth_date;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getEmail()
-    {
+    public function getCityFk() {
+        return $this->city_fk;
+    }
+
+    public function setCityFk($city_fk) {
+        $this->city_fk = $city_fk;
+    }
+
+    public function getEmail() {
         return $this->email;
     }
 
-    /**
-     * @param mixed $email
-     */
-    public function setEmail($email)
-    {
+    public function setEmail($email) {
         $this->email = $email;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getPassword()
-    {
+    public function getPassword() {
         return $this->password;
     }
 
-    /**
-     * @param mixed $password
-     */
-    public function setPassword($password)
-    {
+    public function setPassword($password) {
         $this->password = $password;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getSexe()
-    {
-        return $this->sexe;
+    public function getIsAdmin() {
+        return $this->is_admin;
     }
 
-    /**
-     * @param mixed $sexe
-     */
-    public function setSexe($sexe)
-    {
-        $this->sexe = $sexe;
+    public function setIsAdmin($is_admin) {
+        $this->is_admin = $is_admin;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getDateNaissance()
-    {
-        return $this->date_naissance;
+    public function getDateJoigned() {
+        return $this->date_joigned;
     }
 
-    /**
-     * @param mixed $date_naissance
-     */
-    public function setDateNaissance($date_naissance)
-    {
-        $this->date_naissance = $date_naissance;
+    public function setDateJoigned($date_joigned) {
+        $this->date_joigned = $date_joigned;
     }
-
-
 }

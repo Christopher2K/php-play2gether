@@ -24,7 +24,7 @@ $(function () {
             };
 
             $.ajax({
-                url: '/services/InscriptionService.php',
+                url: '/services/RegistrationService.php',
                 method: 'POST',
                 data: user,
                 complete: function (data) {

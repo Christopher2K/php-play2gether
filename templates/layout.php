@@ -82,7 +82,7 @@ function getMenu($session)
             } else {
                 ?>
                 <li><a href="/annonces.php">Les annonces</a></li>
-                <li><a href="/deconnexion.php">Profil</a></li>
+                <li><a href="/profil.php">Profil</a></li>
                 <li><a href="/deconnexion.php">Deconnexion</a></li>
                 <?php
             }
