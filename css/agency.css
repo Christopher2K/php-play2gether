@@ -1234,6 +1234,16 @@ input[type="text"], input[type="email"], input[type="file"], input[type="passwor
   text-shadow:#000 0px 1px 5px;
 }
 
+.single-para {
+  border: solid 1px #fed136;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.single-para p {
+  margin-bottom: 20px;
+}
+
 /* Contact us */ 
 
 #contact input[type="text"],input[type="email"], input[type="file"], input[type="tel"], select {
