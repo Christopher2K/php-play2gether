@@ -12,7 +12,6 @@
 
 @mixin section-default() {
   padding: 80px 20px;
-
   @include display-flex(column, flex-start, center);
 
   width: 100%;

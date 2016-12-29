@@ -1,0 +1,90 @@
+/**
+ * Auteur: fabien
+ * Date: 01/12/2016
+ */
+
+
+.CreateAnnonce {
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
+  .newannonce {
+    margin-top: 10%;
+  }
+
+input, select, textarea {
+  width:100%;
+  height: 60px;
+  padding:15px 0px 15px 8px;
+  border-radius:5px;
+  box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);
+  background:rgba(0,0,0,0.7);
+  border:1px solid rgba(0,0,0,1);
+  margin-bottom:10px;
+  color:white;
+  text-shadow:#000 0px 1px 5px;
+  color: #FFF;
+}
+
+button[type="submit"]{
+  width:50%;
+  padding:15px;
+  border-radius:5px;
+  background-color:#fed136;
+  font:14px;
+  color:#FFF;
+  margin-bottom: 3%;
+
+}
+
+/* Créer annonce */
+
+section#createannonce {
+  background-color: #222222;
+  background-image: url('/statics/img/map-image.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.description-annonce textarea{
+  height: 200px;
+  width: 100%;
+  padding:15px 0px 15px 8px;
+  border-radius:5px;
+  box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);
+  background:rgba(0,0,0,0.7);
+  border:1px solid rgba(0,0,0,1);
+  margin-bottom:10px;
+  color:white;
+  text-shadow:#000 0px 1px 5px;
+}
+
+form#createannonce {
+  margin : 0;
+  margin-top: 5%;
+}
+
+form#createannonce input {
+  width: 100%;
+}
+
+form#createannonce label {
+  color: #FFF;
+}
+
+form#createannonce button[type="submit"]{
+  margin-top: 5%;
+  margin-left: 25%;
+}
+
+form#createannonce .sexe {
+  display: flex;
+  margin-top: 20px;
+}
+
+}
+
