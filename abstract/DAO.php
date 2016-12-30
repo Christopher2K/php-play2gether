@@ -25,7 +25,7 @@ abstract class DAO {
     public function select($data) {
         $request = 'SELECT * FROM ' . $this->entity_name;
 
-        if (isset($data)) {
+        if (!empty($data)) {
             $request_parameters = [];
             foreach ($data as $key => $value) {
                array_push($request_parameters, $key . '="' . $value . '"');

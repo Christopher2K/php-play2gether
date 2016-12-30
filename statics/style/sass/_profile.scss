@@ -2,7 +2,6 @@
 @import "__mixins";
 @import "__settings";
 
-
 .ProfileIndex {
   .ProfileView {
     @include section-default();
@@ -17,24 +16,12 @@
       width: 100%;
 
       .Identity {
-        @include display-flex(row, center, flex-start);
         width: 100%;
-        height: 300px;
 
 
         .Identity-image, .Identity-infos {
           width: 50%;
           height: 100%;
-        }
-
-        .Identity-image {
-          @include display-flex(row, flex-end);
-          padding-right: 10px;
-
-          img {
-            height: 100%;
-            width: auto;
-          }
         }
 
         .Identity-infos {
@@ -45,7 +32,86 @@
 
       }
 
-      .Form-button {
+      .Credentials-form, .Identity-form {
+        @include display-flex();
+        margin: 30px 0;
+        width: 100%;
+
+        h3 {
+          color: white;
+          width: 100%;
+          text-align: center;
+        }
+
+        hr {
+          width: 200px;
+        }
+
+        form {
+          width: 70%;
+
+          .Form-line {
+            width: 100%;
+
+            .Form-group {
+              @include display-flex(column, flex-start, flex-start);
+              width: 100%;
+              margin-bottom: 15px;
+
+              padding: 0 5px;
+
+              &:nth-child(2) {
+                padding-left: 5px;
+              }
+
+              label {
+                margin-bottom: 10px;
+                font-weight: bold;
+                color: #FFF;
+              }
+
+              input, select {
+                color: white;
+                font-weight: bold;
+                padding: 5px 20px;
+
+                height: 55px;
+                width: 100%;
+
+                box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.75);
+                border-radius: 5px;
+                border: 1px solid transparent;
+
+                background: rgba(0, 0, 0, 0.75);
+
+                transition: all 250ms ease-in;
+
+                &:focus {
+                  outline: none;
+                  border-color: $kounicova;
+                  box-shadow: none;
+                  background: rgba(0, 0, 0, 0.20);
+
+                  transition: all 250ms ease-out;
+                }
+              }
+            }
+
+
+          }
+
+          .Form-center {
+            margin-top: 30px;
+            @include display-flex();
+
+            button {
+              @include button-skin();
+            }
+          }
+        }
+      }
+
+      .Profile-button {
         @include display-flex();
         margin: 30px 0;
 
@@ -53,6 +119,67 @@
           @include button-skin();
           margin: 10px 0;
         }
+      }
+
+    }
+  }
+}
+
+// Responsiveness
+// Tablet & Phone
+@media screen and (max-width: 769px) {
+  .ProfileIndex {
+    .Identity {
+      @include display-flex(column, center, center);
+      height: auto;
+
+      .Identity-image {
+        @include display-flex();
+        img {
+          height: 200px;
+          width: auto;
+        }
+      }
+
+      .Identity-infos {
+        padding-left: 0;
+
+        h1, h2, p {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+
+    .Credentials-form, .Identity-form {
+      .Form-line {
+        @include display-flex();
+      }
+    }
+  }
+}
+
+// Desktop
+@media screen and (min-width: 770px) {
+  .ProfileIndex {
+    .Identity {
+      @include display-flex(row, center, flex-start);
+      height: 300px;
+
+      .Identity-image {
+        @include display-flex(row, flex-end);
+        padding-right: 10px;
+
+        img {
+          height: 100%;
+          width: auto;
+        }
+      }
+    }
+
+    .Credentials-form, .Identity-form {
+      .Form-line {
+        @include display-flex(row);
       }
 
     }

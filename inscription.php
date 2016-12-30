@@ -79,6 +79,21 @@ if ($session->userIsLogged()) {
                 </div>
             </div>
 
+            <div class="Fields-center Sport-fields">
+                <div class="Sport-groupField sport1">
+                    <div class="Sport-select">
+                        <label>CHOISI UN SPORT</label>
+                        <select name="sport1" required></select>
+                    </div>
+
+
+                    <div class="Sport-add">
+                        <i class="addSport fa fa-plus-circle" aria-hidden="true"></i>
+                        <i class="deleteSport fa fa-minus-circle" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+
             <div class="Fields-center">
                 <div class="alert alert-danger mail_error hidden">
                     <strong>Erreur !</strong> L'adresse mail entrée est déjà utilisée.
@@ -103,8 +118,8 @@ if ($session->userIsLogged()) {
 <?php getScripts(); ?>
 <!-- Lib -->
 <!-- Script custom -->
-<script src="/statics/script/city-service.js"></script>
 <script src="/statics/script/registration-service.js"></script>
+
 
 </body>
 </html>

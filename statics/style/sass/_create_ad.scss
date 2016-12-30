@@ -1,0 +1,74 @@
+/**
+ * Auteur: fabien
+ * Date: 01/12/2016
+ */
+
+@import "__colors";
+@import "__mixins";
+@import "__settings";
+
+.CreateAdIndex {
+  background-color: $half-back;
+
+  .CreateAd {
+    @include section-default();
+    padding-top: 0;
+    margin-top: 100px;
+
+    .CreateAd-header {
+      @include section-header-default();
+    }
+  }
+
+  .CreateAd-form {
+
+    button {
+      @include button-skin();
+    }
+
+  }
+
+  input, select, textarea {
+    width: 100%;
+    height: 60px;
+    padding: 15px 0px 15px 8px;
+    border-radius: 5px;
+    box-shadow: inset 4px 6px 10px -4px rgba(0, 0, 0, 0.3), 0 1px 1px -1px rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(0, 0, 0, 1);
+    margin-bottom: 10px;
+    color: white;
+    text-shadow: #000 0px 1px 5px;
+    color: #FFF;
+  }
+
+
+  .description-annonce textarea {
+    height: 200px;
+    width: 100%;
+    padding: 15px 0px 15px 8px;
+    border-radius: 5px;
+    box-shadow: inset 4px 6px 10px -4px rgba(0, 0, 0, 0.3), 0 1px 1px -1px rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(0, 0, 0, 1);
+    margin-bottom: 10px;
+    color: white;
+    text-shadow: #000 0px 1px 5px;
+  }
+
+  form#createannonce input {
+    width: 100%;
+  }
+
+  form#createannonce label {
+    color: #FFF;
+  }
+
+
+  form#createannonce .sexe {
+    display: flex;
+    margin-top: 20px;
+  }
+
+}
+

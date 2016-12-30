@@ -1,10 +1,17 @@
 <?php
-require_once ('../abstract/Entity.php');
+require_once(__DIR__ . '/../abstract/Entity.php');
 
 class Sport extends Entity {
 
     private $id_sport;
     private $name;
+
+    public function toArray() {
+        return [
+            'id_sport' => $this->id_sport,
+            'name'     => $this->name
+        ];
+    }
 
     // GETTERS && SETTERS
 

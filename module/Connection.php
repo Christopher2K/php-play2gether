@@ -16,7 +16,7 @@
                     self::$_instance = new PDO(self::DSN_V2, self::USER, self::PASSWORD);
                     self::$_instance->exec('SET NAMES utf8');
                 } catch (PDOException $e) {
-                    echo 'Connexion échouée : ' . $e->getMessage();
+                    echo 'La connexion à la BDD a échouée : ' . $e->getMessage();
                     self::$_instance = false;
                 }
             }

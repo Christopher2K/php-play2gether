@@ -14,7 +14,7 @@ class UserSport {
 
     // GETTERS & SETTERS
 
-    public function getUser(): User {
+    public function getUser() {
         return $this->user;
     }
 
@@ -22,7 +22,7 @@ class UserSport {
         $this->user = $user;
     }
 
-    public function getSport(): Sport {
+    public function getSport() {
         return $this->sport;
     }
 

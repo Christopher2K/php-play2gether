@@ -59,9 +59,10 @@ function getScripts()
 
 /**
  * Return the common menu
+ * @param Session $session : Custom object for session
  * @return HTML Code
  */
-function getMenu($session)
+function getMenu(Session $session)
 {
     ?>
     <nav class="Navbar Navbar--initial">
@@ -81,6 +82,7 @@ function getMenu($session)
                 <?php
             } else {
                 ?>
+                <li><a href="/creationAnnonce.php">Créer une annonce</a></li>
                 <li><a href="/annonces.php">Les annonces</a></li>
                 <li><a href="/profil.php">Profil</a></li>
                 <li><a href="/deconnexion.php">Deconnexion</a></li>
