@@ -7,6 +7,7 @@ class UserDAO extends DAO {
     // Custom Queries
     static $CREATE = "INSERT INTO User(first_name, last_name, gender, birth_date, city_fk, email, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
     static $ADD_USER_SPORT = "INSERT INTO UserSport(sport_fk, user_fk) VALUES (?, ?)";
+    static $ADD_USER_AD = "INSERT INTO UserAd(ad_fk, user_fk) VALUES (?, ?)";
     static $UPDATE_CREDENTIALS = "UPDATE User SET email=?, password=? WHERE id_user=?";
     static $UPDATE_IDENTITY = "UPDATE User SET first_name=?, last_name=?, city_fk=? WHERE id_user=?";
 
@@ -18,9 +19,9 @@ class UserDAO extends DAO {
     protected function initCustomQueries() {
         $this->customQueries[ 'create' ] = $this->db->prepare(UserDAO::$CREATE);
         $this->customQueries[ 'add_user_sport' ] = $this->db->prepare(UserDAO::$ADD_USER_SPORT);
+        $this->customQueries[ 'add_user_ad' ] = $this->db->prepare(UserDAO::$ADD_USER_AD);
         $this->customQueries[ 'update_credentials' ] = $this->db->prepare(UserDAO::$UPDATE_CREDENTIALS);
         $this->customQueries[ 'update_identity' ] = $this->db->prepare(UserDAO::$UPDATE_IDENTITY);
-
     }
 
     // Execute custom queries
@@ -37,6 +38,13 @@ class UserDAO extends DAO {
     public function addUserSport(User $user, $sport_id) {
         $request_array = [$sport_id, $user->getIdUser()];
         $insert_count = $this->customQueries[ 'add_user_sport' ]->execute($request_array);
+
+        return $insert_count;
+    }
+
+    public function addUserAd(User $user, $ad_id) {
+        $request_array = [$ad_id, $user->getIdUser()];
+        $insert_count = $this->customQueries[ 'add_user_ad' ]->execute($request_array);
 
         return $insert_count;
     }

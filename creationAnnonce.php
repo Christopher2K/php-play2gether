@@ -31,53 +31,70 @@ if (!$session->userIsLogged()) {
     </div>
 
     <div class="CreateAd-content container">
-        <form method="post" id="createannonce" class="CreateAd-form">
+        <form method="post" id="createAdForm" class="CreateAd-form">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="dateEvenement">Date Evenement</label>
-                    <input type="date" name="dateEvenement" class="form-control" id="prenom" required
-                           placeholder="Date de l'annonce">
+                    <label for="title">TITRE</label>
+                    <input type="text" name="title" class="form-control" required/>
                 </div>
                 <div class="form-group">
-                    <label for="sport">Sport</label>
-                    <select name="sport">
-                        <?php foreach ($sports as $sport): ?>
-                            <option value="<?= $sport->getIdSport(); ?>"><?= $sport->getName(); ?></option>
-                        <?php endforeach; ?>
-                    </select>
+                    <label for="sport">SPORT</label>
+                    <select name="sport" required></select>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="titre">Titre</label>
-                    <input type="text" name="titre" class="form-control" id="id" aria-describedby="id"
-                           placeholder="Identifiant">
+                    <label for="date">DATE DE LA SESSION</label>
+                    <input type="date" name="date" class="form-control"/>
                 </div>
                 <div class="form-group">
-                    <label for="nbJoueurs">Nombre De Joueurs Max</label>
-                    <input type="number" name="nbJoueurs" class="form-control" id="password" placeholder="Mot de passe">
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label for="ville">Ville</label>
-                    <select name="ville">
-                        <?php foreach ($villes as $ville): ?>
-                            <option value=<?= $ville[ "ville_id" ] ?>><?= $ville[ "ville_nom" ] ?></option>
-                        <?php endforeach; ?>
+                    <label for="max_players">JOUEURS MAX</label>
+                    <select name="max_players" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
                     </select>
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="form-group">
-                    <div class="description-annonce">
-                        <label for="description">Description</label>
-                        <textarea name="description" class="form-control" id="prenom" required
-                                  data-validation-required-message="Veuillez renseigner votre prénom"
-                                  placeholder="Description de l'annonce"></textarea>
-                    </div>
+                    <label for="city">LIEU</label>
+                    <select name="city" required></select>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="content">DESCRIPTION DE TON ANNONCE</label>
+                    <textarea name="content" class="form-control textarea" required
+                              placeholder="L'heure, les règles, les activités prévues... (50 caractères min)"></textarea>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="alert alert-danger server_error hidden">
+                    <strong>Erreur !</strong> Quelque chose s'est mal passé. Contactez nous.
                 </div>
 
+                <div class="alert alert-danger date_error hidden">
+                    <strong>Erreur !</strong> La date de ta session sportive ne peut pas être antérieure à la date d'aujourd'hui !
+                </div>
             </div>
 
             <div class="col-md-12">
@@ -90,6 +107,7 @@ if (!$session->userIsLogged()) {
 <?php getFooter(); ?>
 
 <?php getScripts(); ?>
+<script src="statics/script/create-ad-service.js"></script>
 
 </body>
 </html>

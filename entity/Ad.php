@@ -14,6 +14,25 @@ class Ad extends Entity {
     private $max_players;
     private $city_fk;
 
+    public function toArray($option) {
+        $array['creator_fk'] = $this->creator_fk;
+        $array['spork_fk'] = $this->sport_fk;
+        $array['title'] = $this->title;
+        $array['content'] = $this->content;
+        $array['date'] = $this->date;
+        $array['max_players'] = $this->max_players;
+        $array['city_fk'] = $this->city_fk;
+
+        switch ($option) {
+            case 'create':
+                break;
+            default:
+                break;
+        }
+
+        return $array;
+    }
+
     // GETTERS & SETTERS
 
     public function getIdAd() {

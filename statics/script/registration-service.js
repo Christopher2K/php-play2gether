@@ -14,7 +14,7 @@ $(function () {
                 last_name: $('input[name="last_name"]').val(),
                 first_name: $('input[name="first_name"]').val(),
                 gender: $('select[name="gender"]').val(),
-                birth_date: $('input[name="birth_date"]').val(),
+                birth_date: $('input[name="birth_date"]').datepicker().val(),
                 email: $('input[name="email_adress"]').val(),
                 password: $('input[name="password"]').val(),
                 city_fk: $('select[name="city"]').select2().val(),
@@ -24,9 +24,6 @@ $(function () {
             $('.Sport-select select').each(function (index, element) {
                 user.sports.push($(element).val());
             });
-
-            console.log(user);
-
 
             $.ajax({
                 url: '/services/RegistrationService.php',

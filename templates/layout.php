@@ -20,6 +20,7 @@ function getHead($title)
     <link href="/statics/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="/statics/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="/statics/vendor/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css">
+    <link href="/statics/vendor/jquery-ui/themes/base/jquery-ui.min.css" rel="stylesheet" type="text/css">
 
     <!-- Custom Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
@@ -47,12 +48,14 @@ function getScripts()
     <!-- Scripts -->
     <script src="/statics/vendor/jquery/dist/jquery.min.js"></script>
     <script src="/statics/vendor/jquery-ui/jquery-ui.min.js"></script>
+
     <script src="/statics/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/statics/vendor/jquery-scrollspy/jquery-scrollspy.min.js"></script>
     <script src="/statics/vendor/select2/dist/js/select2.full.min.js"></script>
 
     <script src="/statics/script/menu.js"></script>
-    <script src="/statics/script/search.js"></script>
+    <script src="/statics/script/polyfills.js"></script>
+
     <?php
 
 }
