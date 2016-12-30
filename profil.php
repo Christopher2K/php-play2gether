@@ -60,12 +60,14 @@ if ($session->userIsLogged()) {
                 <div>
                     <div class="Form-group">
                         <label>Adresse mail</label>
-                        <input/>
+                            <input/>
+                            <!--<input type="text" class="form-control" id="mail" placeholder="Email"required> -->
                     </div>
 
                     <div class="Form-group">
                         <label>Mot de passe actuel</label>
-                        <input/>
+                            <input/>
+                            <!-- <input type="password" class="form-control" id="password" placeholder="Mot de passe"required> -->
                     </div>
                 </div>
 
@@ -73,11 +75,13 @@ if ($session->userIsLogged()) {
                     <div class="Form-group">
                         <label>Nouveau mot de passe</label>
                         <input/>
+                        <!-- <input type="password" class="form-control" id="newpassword" placeholder="Nouveau mot de passe"required> -->
                     </div>
 
                     <div class="Form-group">
                         <label>Confirmation Mot de passe</label>
                         <input/>
+                        <!-- <input type="password" class="form-control" id="confirmpassword" placeholder="Confirmer le mot de passe" required> -->
                     </div>
                 </div>
 
