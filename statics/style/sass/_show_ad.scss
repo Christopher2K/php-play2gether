@@ -1,0 +1,65 @@
+/**
+ * Auteur: fabien
+ * Date: 01/12/2016
+ */
+@import "__colors";
+@import "__mixins";
+@import "__settings";
+
+.ShowAdIndex {
+  background: {
+    image: url('/statics/img/fond-texture.jpg');
+    color: $half-back;
+  }
+
+  .ShowAd {
+    @include section-default();
+    padding-top: 0;
+    margin-top: 100px;
+
+    .ShowAd-header {
+      @include section-header-default();
+    }
+
+    .ShowAd-content {
+      .Details {
+        border: 3px solid $kounicova;
+        padding: 20px;
+
+        h4 {
+          color: $kounicova;
+          margin-bottom: 30px;
+
+          strong {
+            text-decoration: underline;
+          }
+
+        }
+
+        .Info {
+          margin-bottom: 30px;
+
+          .Info-title {
+            color: $kounicova;
+            text-decoration: underline;
+          }
+
+          .Info-content {
+            color: #FFF;
+          }
+        }
+
+        .Actions {
+          @include display-flex();
+          width: 100%;
+          button {
+            @include button-skin();
+            margin-bottom: 15px;
+
+          }
+        }
+      }
+    }
+  }
+}
+

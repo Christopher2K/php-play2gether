@@ -42,6 +42,12 @@ class User extends Entity {
         return $array;
     }
 
+    // OVERRIDE
+
+    public function __toString() {
+        return $this->first_name.' '.$this->last_name;
+    }
+
     // GETTERS & SETTERS
 
     public function getIdUser() {

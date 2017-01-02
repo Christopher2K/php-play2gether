@@ -1,5 +1,5 @@
 <?php
-require_once ('../abstract/Entity.php');
+require_once(__DIR__ . '/../abstract/Entity.php');
 
 class Ad extends Entity {
 
@@ -15,13 +15,13 @@ class Ad extends Entity {
     private $city_fk;
 
     public function toArray($option) {
-        $array['creator_fk'] = $this->creator_fk;
-        $array['spork_fk'] = $this->sport_fk;
-        $array['title'] = $this->title;
-        $array['content'] = $this->content;
-        $array['date'] = $this->date;
-        $array['max_players'] = $this->max_players;
-        $array['city_fk'] = $this->city_fk;
+        $array[ 'creator_fk' ] = $this->creator_fk;
+        $array[ 'spork_fk' ] = $this->sport_fk;
+        $array[ 'title' ] = $this->title;
+        $array[ 'content' ] = $this->content;
+        $array[ 'date' ] = $this->date;
+        $array[ 'max_players' ] = $this->max_players;
+        $array[ 'city_fk' ] = $this->city_fk;
 
         switch ($option) {
             case 'create':
@@ -31,6 +31,20 @@ class Ad extends Entity {
         }
 
         return $array;
+    }
+
+    public function isCreator(User $user) {
+        return $user->getIdUser() == $this->creator_fk;
+    }
+
+    public function hasSubscribe(User $user, $user_list) {
+        foreach ($user_list as $user_ad) {
+            if ($user_ad->getIdUser() == $user->getIdUser()) {
+                return TRUE;
+            }
+        }
+
+        return FALSE;
     }
 
     // GETTERS & SETTERS
@@ -91,8 +105,18 @@ class Ad extends Entity {
         $this->created_on = $created_on;
     }
 
-    public function getDate() {
-        return $this->date;
+    public function getDate($formated = True) {
+        if ($formated) {
+            $temp = explode('-', $this->date);
+            $temp_bis = $temp[ 2 ];
+            $temp[ 2 ] = $temp[ 0 ];
+            $temp[ 0 ] = $temp_bis;
+
+            return implode('/', $temp);
+        } else {
+            return $this->date;
+        }
+
     }
 
     public function setDate($date) {

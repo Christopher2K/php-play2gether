@@ -6,10 +6,14 @@ class UserDAO extends DAO {
 
     // Custom Queries
     static $CREATE = "INSERT INTO User(first_name, last_name, gender, birth_date, city_fk, email, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
     static $ADD_USER_SPORT = "INSERT INTO UserSport(sport_fk, user_fk) VALUES (?, ?)";
     static $ADD_USER_AD = "INSERT INTO UserAd(ad_fk, user_fk) VALUES (?, ?)";
+
     static $UPDATE_CREDENTIALS = "UPDATE User SET email=?, password=? WHERE id_user=?";
     static $UPDATE_IDENTITY = "UPDATE User SET first_name=?, last_name=?, city_fk=? WHERE id_user=?";
+
+    static $GET_USERS_BY_AD = "SELECT User.* FROM User, UserAd WHERE User.id_user = UserAd.user_fk AND UserAd.ad_fk=?";
 
     public function __construct(PDO $db) {
         parent::__construct($db);
@@ -22,6 +26,7 @@ class UserDAO extends DAO {
         $this->customQueries[ 'add_user_ad' ] = $this->db->prepare(UserDAO::$ADD_USER_AD);
         $this->customQueries[ 'update_credentials' ] = $this->db->prepare(UserDAO::$UPDATE_CREDENTIALS);
         $this->customQueries[ 'update_identity' ] = $this->db->prepare(UserDAO::$UPDATE_IDENTITY);
+        $this->customQueries[ 'get_users_by_ad' ] = $this->db->prepare(UserDAO::$GET_USERS_BY_AD);
     }
 
     // Execute custom queries
@@ -61,6 +66,16 @@ class UserDAO extends DAO {
         $insert_count = $this->customQueries[ 'update_identity' ]->execute($request_array);
 
         return $insert_count;
+    }
+
+    public function getUsersByAd($ad_id) {
+        $request_array = [$ad_id];
+
+        if ($this->customQueries[ 'get_users_by_ad' ]->execute($request_array)) {
+            return $this->renderData($this->customQueries[ 'get_users_by_ad' ]->fetchAll(PDO::FETCH_ASSOC));
+        } else {
+            return FALSE;
+        }
     }
 
     public function logIn($email, $password) {
