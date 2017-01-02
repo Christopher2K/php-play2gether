@@ -1,21 +1,16 @@
 $(function () {
-    // Mise à disposition des sports
-    $.ajax({
-        url: '/services/GetSportService.php',
-        method: 'POST',
-        complete: function (data) {
-            var sportData = data.responseJSON;
-            var options = [];
-            sportData.forEach(function (sport) {
-                options.push('<option value="' + sport.id_sport + '">' + sport.name + '</option>')
-            });
-
-            options = options.join('');
-            $(options).appendTo('select[name="sport"]');
-        }
+    // Buttons
+    $('.Action-modify').click(function () {
+        $('.ModifyAd').removeClass('hidden');
+        $('.Details').addClass('hidden');
     });
 
+    $('.GoBack').click(function () {
+        $('.ModifyAd').addClass('hidden');
+        $('.Details').removeClass('hidden');
+    });
 
+    // Form things
     // Mise à disposition des villes du formulaire
     $('select[name="city"]').select2({
         ajax: {
@@ -53,22 +48,21 @@ $(function () {
     }
 
     // Handle form
-    $('#createAdForm').submit(function () {
+    $('#modifyAdForm').submit(function () {
         event.preventDefault();
         $('.alert').addClass('hidden');
 
         if (formIsValid()) {
             var ad = {
+                id_ad: urlParams.id,
                 title: $('input[name="title"]').val(),
                 date: $('input[name="date"]').datepicker().val(),
-                sport_fk: $('select[name="sport"]').val(),
-                max_players: $('select[name="max_players"]').val(),
                 city_fk: $('select[name="city"]').select2().val(),
                 content: $('textarea[name="content"]').val(),
             };
 
             $.ajax({
-                url: '/services/CreateAdService.php',
+                url: '/services/ChangeAdService.php',
                 method: 'POST',
                 data: ad,
                 complete: function (data) {

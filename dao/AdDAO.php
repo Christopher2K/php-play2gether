@@ -5,6 +5,7 @@ require_once(__DIR__ . '/../abstract/DAO.php');
 class AdDAO extends DAO {
 
     static $CREATE = "INSERT INTO Ad(creator_fk, sport_fk, title, content, date, max_players, city_fk) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    static $UPDATE = "UPDATE Ad SET  sport_fk=?, title=?, content=?, date=?, max_players=?, city_fk=? WHERE id_ad=?";
     static $DELETE = "DELETE FROM Ad WHERE id_ad=?";
 
     public function __construct($db) {
@@ -14,6 +15,7 @@ class AdDAO extends DAO {
 
     public function initCustomQueries() {
         $this->customQueries[ 'create' ] = $this->db->prepare(AdDAO::$CREATE);
+        $this->customQueries[ 'update' ] = $this->db->prepare(AdDAO::$UPDATE);
         $this->customQueries[ 'delete' ] = $this->db->prepare(AdDAO::$DELETE);
     }
 
@@ -23,6 +25,16 @@ class AdDAO extends DAO {
             array_push($request_array, $value);
         }
         $this->customQueries[ 'create' ]->execute($request_array);
+
+        return $this->db->lastInsertId();
+    }
+
+    public function update(Ad $ad) {
+        $request_array = [];
+        foreach ($ad->toArray('update') as $value) {
+            array_push($request_array, $value);
+        }
+        $this->customQueries[ 'update' ]->execute($request_array);
 
         return $this->db->lastInsertId();
     }

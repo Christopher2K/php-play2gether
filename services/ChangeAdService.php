@@ -14,11 +14,21 @@ $user = $session->readSession('user');
 $ad_dao = new AdDAO($connexion);
 
 if ($user) {
-    $ad = $ad_dao->select(['id_ad' => $_POST[ 'ad_id' ]])[ 0 ];
+    $ad = $ad_dao->select(['id_ad' => $_POST[ 'id_ad' ]])[ 0 ];
     if ($ad->isCreator($user)) {
 
-        if ($ad_dao->delete($ad)) {
+        $data = [
+            'title' => $_POST['title'],
+            'date' => $_POST['date'],
+            'city_fk' => $_POST['city_fk'],
+            'content' => $_POST['content'],
+        ];
+
+        $ad->hydrate($data);
+
+        if ($ad_dao->update($ad)) {
             $response [ 'status' ] = 'success';
+            $response [ 'id_ad' ] = $_POST[ 'id_ad' ];
         } else {
             $response [ 'status' ] = 'error';
         }

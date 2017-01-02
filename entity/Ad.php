@@ -15,16 +15,26 @@ class Ad extends Entity {
     private $city_fk;
 
     public function toArray($option) {
-        $array[ 'creator_fk' ] = $this->creator_fk;
-        $array[ 'spork_fk' ] = $this->sport_fk;
-        $array[ 'title' ] = $this->title;
-        $array[ 'content' ] = $this->content;
-        $array[ 'date' ] = $this->date;
-        $array[ 'max_players' ] = $this->max_players;
-        $array[ 'city_fk' ] = $this->city_fk;
+        $array = [];
 
         switch ($option) {
             case 'create':
+                $array[ 'creator_fk' ] = $this->creator_fk;
+                $array[ 'spork_fk' ] = $this->sport_fk;
+                $array[ 'title' ] = $this->title;
+                $array[ 'content' ] = $this->content;
+                $array[ 'date' ] = $this->date;
+                $array[ 'max_players' ] = $this->max_players;
+                $array[ 'city_fk' ] = $this->city_fk;
+                break;
+            case 'update':
+                $array[ 'spork_fk' ] = $this->sport_fk;
+                $array[ 'title' ] = $this->title;
+                $array[ 'content' ] = $this->content;
+                $array[ 'date' ] = $this->date;
+                $array[ 'max_players' ] = $this->max_players;
+                $array[ 'city_fk' ] = $this->city_fk;
+                $array[ 'id_ad' ] = $this->id_ad;
                 break;
             default:
                 break;
