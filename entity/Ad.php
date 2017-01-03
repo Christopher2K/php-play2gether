@@ -47,7 +47,7 @@ class Ad extends Entity {
 
         return $array;
     }
-
+    
     public function isCreator(User $user) {
         return $user->getIdUser() == $this->creator_fk;
     }
@@ -63,7 +63,7 @@ class Ad extends Entity {
     }
 
     public function isFull($user_list) {
-        return count($user_list) >= $this->max_players;
+        return count($user_list) >= intval($this->max_players);
     }
 
     // GETTERS & SETTERS

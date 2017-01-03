@@ -70,6 +70,7 @@ if ($session->userIsLogged()) {
                         echo '<strong>' . $user_sport->getName() . '</strong> ';
                     } ?>
                 </p>
+                <p>Ton numéro de téléphone : <?php echo $user->getNumber(); ?></p>
             </div>
         </div>
 
