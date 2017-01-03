@@ -39,9 +39,12 @@ if ($user & $ad->getStatusFk() != Ad::$STATUS_TERMINATED) {
                         }
 
                         // BEGIN SEND MAIL / SMS
-                        Communication::sendSms($user->getNumber(), $user->getMessageSubscriber());
-                        Communication::sendSms($ad_creator->getNumber(), $ad_creator->getMessageAdCreator());
-
+                        try {
+                            Communication::sendSms($user->getNumber(), $user->getMessageSubscriber($ad_creator));
+                            Communication::sendSms($ad_creator->getNumber(), $ad_creator->getMessageAdCreator($user));
+                        } catch (Exception $e) {
+                            $response['sms_error'] = ['sms_error'];
+                        }
                         // TODO SEND MAIL
                         // END
 
@@ -62,9 +65,10 @@ if ($user & $ad->getStatusFk() != Ad::$STATUS_TERMINATED) {
                 $response[ 'status' ] = 'not_subscribed';
             } else {
                 if ($user_dao->deleteUserAd($user, $_POST[ 'id_ad' ])) {
+
                     $users_ad = $user_dao->getUsersByAd($_POST[ 'id_ad' ]);
 
-                    if ($ad->isFull($users_ad)) {
+                    if (!$ad->isFull($users_ad)) {
                         $ad_dao->changeStatus($_POST[ 'id_ad' ], Ad::$STATUS_IN_PROGRESS);
                     }
 

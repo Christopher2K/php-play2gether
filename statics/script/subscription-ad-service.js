@@ -27,10 +27,11 @@ $(function () {
             data: {action: 'unsubscribe', id_ad: urlParams.id},
             complete: function (data) {
                 var response = data.responseJSON;
+                console.log(data);
 
                 switch (response.status) {
                     case 'success':
-                        document.location.href = 'profil.php';
+                        document.location.href = 'annonceDetail.php/?id=' + response.id_ad;
                         break;
                     case 'error':
                         console.log(data);

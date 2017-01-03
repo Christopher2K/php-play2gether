@@ -44,13 +44,13 @@ class User extends Entity {
         return $array;
     }
 
-    public function getMessageSubscriber() {
-        return "Bonjour ! Vous venez d'accepter une annonce ! Vous pouvez contacter la personne dès maintenant : " . $this->getLastName(). " " .$this->getFirstName(). " ,Tel : " . $this->getNumber();
+    public function getMessageSubscriber(User $user) {
+        return "Bonjour ! Vous venez d'accepter une annonce ! Vous pouvez contacter la personne dès maintenant : " . $user->getLastName(). " " .$user->getFirstName(). " ,Tel : " . $user->getNumber();
 
     }
 
-    public function getMessageAdCreator() {
-        return "Bonjour ! Votre annonce a été acceptée ! Vous pouvez contacter la personne dès maintenant : ".$this->getLastName()." ".$this->getFirstName()." ,Tel : ".$this->getNumber();
+    public function getMessageAdCreator(User $user) {
+        return "Bonjour ! Votre annonce a été acceptée ! Vous pouvez contacter la personne dès maintenant : ".$user->getLastName()." ".$user->getFirstName()." ,Tel : ".$user->getNumber();
     }
 
     // OVERRIDE
