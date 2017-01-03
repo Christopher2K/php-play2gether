@@ -148,7 +148,7 @@ while ($row11 = mysqli_fetch_assoc($result11)) {
 <!-- Annonce Section -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-<section id="annonce" class="bg-light-gray">
+<section id="fond" class="bg-light-gray">
 
 <div class="col-lg-12 text-center">
    <h2 class="section-heading">Statistiques</h2>

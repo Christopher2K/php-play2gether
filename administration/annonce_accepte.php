@@ -19,7 +19,7 @@ $sms_compte="sms-br150098-1";
 
 /*entrer le numéro emetteur du sms, ce numéro doit etre identifie dans votre manager,
 remplacer +33600110011 par votre propre numero de mobile*/
-$from="+33777950491";
+$from="Sport2Get";
 
 
 /* creation de la variable to dans laquelle nous recuperons via la methode post

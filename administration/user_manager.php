@@ -16,7 +16,7 @@
 
 
 </style>
-<section id="annonce" class="bg-light-gray">
+<section id="fond" class="bg-light-gray">
 
 <div class="col-lg-12 text-center">
    <h2 class="section-heading">User Manager</h2>

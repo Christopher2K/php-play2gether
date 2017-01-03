@@ -900,11 +900,15 @@ form#inscription .sexe {
 
 /* Annonce */ 
 
+#fond {
+  background-image: url('../img/fond-texture.jpg');
+}
+
 section#annonce {
   background-color: #222222;
   background-image: url('../img/fond-texture.jpg');
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 400;
