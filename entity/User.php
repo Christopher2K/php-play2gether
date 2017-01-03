@@ -25,6 +25,7 @@ class User extends Entity {
         $array['birth_date'] = $this->birth_date;
         $array['city_fk'] = $this->city_fk;
         $array['email'] = $this->email;
+        $array['number'] = $this->number;
         $array['password'] = $this->password;
 
         switch ($option) {
@@ -104,6 +105,16 @@ class User extends Entity {
 
     public function setEmail($email) {
         $this->email = $email;
+    }
+
+
+
+    public function getNumber() {
+        return $this->number;
+    }
+
+    public function setNumber($number) {
+        $this->number = $number;
     }
 
     public function getPassword() {
