@@ -13,6 +13,7 @@ class User extends Entity {
     private $password;
     private $is_admin;
     private $date_joigned;
+    private $number;
 
     public static function hashPassword($password) {
         return password_hash($password, PASSWORD_BCRYPT);
@@ -41,6 +42,15 @@ class User extends Entity {
         }
 
         return $array;
+    }
+
+    public function getMessageSubscriber() {
+        return "Bonjour ! Vous venez d'accepter une annonce ! Vous pouvez contacter la personne dès maintenant : " . $this->getLastName(). " " .$this->getFirstName(). " ,Tel : " . $this->getNumber();
+
+    }
+
+    public function getMessageAdCreator() {
+        return "Bonjour ! Votre annonce a été acceptée ! Vous pouvez contacter la personne dès maintenant : ".$this->getLastName()." ".$this->getFirstName()." ,Tel : ".$this->getNumber();
     }
 
     // OVERRIDE
@@ -107,10 +117,8 @@ class User extends Entity {
         $this->email = $email;
     }
 
-
-
     public function getNumber() {
-        return $this->number;
+        return '+33' . substr($this->number, 1);
     }
 
     public function setNumber($number) {
@@ -140,4 +148,6 @@ class User extends Entity {
     public function setDateJoigned($date_joigned) {
         $this->date_joigned = $date_joigned;
     }
+
+
 }

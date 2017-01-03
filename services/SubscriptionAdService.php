@@ -1,6 +1,8 @@
 <?php
 require_once(__DIR__ . '/../module/Session.php');
 require_once(__DIR__ . '/../module/Connection.php');
+require_once(__DIR__ . '/../module/Communication.php');
+
 
 
 require_once(__DIR__ . '/../dao/AdDAO.php');
@@ -18,6 +20,7 @@ $ad_dao = new AdDAO($connexion);
 $user_dao = new UserDAO($connexion);
 
 $ad = $ad_dao->select(['id_ad' => $_POST[ 'id_ad' ]])[ 0 ];
+$ad_creator = $user_dao->select(['id_user' => $ad->getCreatorFk() ])[ 0 ];
 $users_ad = $user_dao->getUsersByAd($_POST[ 'id_ad' ]);
 
 if ($user & $ad->getStatusFk() != Ad::$STATUS_TERMINATED) {
@@ -36,6 +39,13 @@ if ($user & $ad->getStatusFk() != Ad::$STATUS_TERMINATED) {
                         if ($ad->isFull($users_ad)) {
                             $ad_dao->changeStatus($_POST[ 'id_ad' ], Ad::$STATUS_FULL);
                         }
+
+                        // BEGIN SEND MAIL / SMS
+                        Communication::sendSms($user->getNumber(), $user->getMessageSubscriber());
+                        Communication::sendSms($ad_creator->getNumber(), $ad_creator->getMessageAdCreator());
+
+                        // TODO SEND MAIL
+                        // END
 
                         $response[ 'status' ] = 'success';
                         $response [ 'id_ad' ] = $_POST[ 'id_ad' ];
