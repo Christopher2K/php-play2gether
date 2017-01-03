@@ -100,28 +100,35 @@ if (isset($_GET[ 'id' ])) {
                         <p class="Info-content"><?php echo $ad_creator ?></p>
                     </div>
 
-                    <div class="Actions">
-                        <?php
-                        // If $user = $creator
-                        if ($ad->isCreator($user)) {
-                            ?>
-                            <button class="Action-modify">Modifier mon annonce</button>
-                            <button class="Action-delete">Supprimer mon annonce</button>
+                    <?php
+                    if ($ad->getStatusFk() != Ad::$STATUS_TERMINATED) {
+                        ?>
+                        <div class="Actions">
                             <?php
-                        } else {
-                            if ($ad->hasSubscribe($user, $users_ad)) {
+                            // If $user = $creator
+                            if ($ad->isCreator($user)) {
                                 ?>
-                                <button class="Action-unsubscribe">Se désister</button>
+                                <button class="Action-modify">Modifier mon annonce</button>
+                                <button class="Action-delete">Supprimer mon annonce</button>
                                 <?php
                             } else {
-                                ?>
-                                <button class="Action-subscribe">Participer à cette annonce</button>
-                                <?php
+                                if ($ad->hasSubscribe($user, $users_ad)) {
+                                    ?>
+                                    <button class="Action-unsubscribe">Se désister</button>
+                                    <?php
+                                } else if ($ad->getStatusFk() != Ad::$STATUS_FULL) {
+                                    ?>
+                                    <button class="Action-subscribe">Participer à cette annonce</button>
+                                    <?php
+                                }
                             }
-                        }
-                        ?>
+                            ?>
 
-                    </div>
+                        </div>
+                        <?php
+                    }
+                    ?>
+
                 </div>
 
                 <?php

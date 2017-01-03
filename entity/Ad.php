@@ -3,6 +3,11 @@ require_once(__DIR__ . '/../abstract/Entity.php');
 
 class Ad extends Entity {
 
+    // STATUS
+    static $STATUS_TERMINATED = 1;
+    static $STATUS_IN_PROGRESS = 2;
+    static $STATUS_FULL = 3;
+
     private $id_ad;
     private $creator_fk;
     private $sport_fk;
@@ -55,6 +60,10 @@ class Ad extends Entity {
         }
 
         return FALSE;
+    }
+
+    public function isFull($user_list) {
+        return count($user_list) >= $this->max_players;
     }
 
     // GETTERS & SETTERS

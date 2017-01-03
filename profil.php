@@ -3,12 +3,17 @@ require('templates/layout.php');
 require('module/Connection.php');
 require('module/Session.php');
 
+require('entity/City.php');
 require('dao/CityDAO.php');
+
+require('entity/Sport.php');
 require('dao/SportDAO.php');
 
-require('entity/City.php');
-require('entity/Sport.php');
 require('entity/User.php');
+require('dao/UserDAO.php');
+
+require('entity/Ad.php');
+require('dao/AdDAO.php');
 
 $connexion = Connection::getInstance();
 $session = Session::getInstance();
@@ -65,6 +70,33 @@ if ($session->userIsLogged()) {
                         echo '<strong>' . $user_sport->getName() . '</strong> ';
                     } ?>
                 </p>
+            </div>
+        </div>
+
+        <div class="History-ads container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Historique des sessions sportives</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="Ad col-md-offset-2 col-md-8 col-xs-12">
+                    <div class="Ad-title col-md-3">
+                        <p>Titre</p>
+                    </div>
+                    <div class="Ad-author col-md-2">
+                        <p>Auteur</p>
+                    </div>
+                    <div class="Ad-date col-md-2">
+                        <p>00/00/0000</p>
+                    </div>
+                    <div class="Ad-sport col-md-2">
+                        <p>Sport</p>
+                    </div>
+                    <div class="Ad-button col-md-3">
+                        <button><a href="">Voir</a></button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -146,7 +178,6 @@ if ($session->userIsLogged()) {
                 </div>
             </form>
         </div>
-
 
         <div class="Profile-button">
             <button id="CredentialsForm" class="FormButton">Modifier mes informations d'identification</button>
