@@ -123,7 +123,6 @@ if (isset($_GET[ 'id' ])) {
                                 }
                             }
                             ?>
-
                         </div>
                         <?php
                     }

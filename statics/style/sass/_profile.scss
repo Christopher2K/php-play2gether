@@ -53,35 +53,28 @@
           box-shadow: 0 0 2px 0 #000;
           border-radius: 5px;
           color: #FFF;
-          height: 100px;
 
           div {
             height: 100%;
 
             p {
               margin-bottom: 0;
-              margin-top: auto;
             }
           }
 
 
           .Ad-title {
+            font-weight: bold;
 
           }
 
           .Ad-date {
-
-          }
-
-          .Ad-author {
-
-          }
-
-          .Ad-sport {
+            font-style: italic;
 
           }
 
           .Ad-button {
+            @include display-flex(row, flex-end);
             button {
               @include button-skin();
             }

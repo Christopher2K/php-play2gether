@@ -31,6 +31,7 @@ if ($user_dao->select(['email' => $user->getEmail()])) {
         }
     } else {
         $response[ 'status' ] = 'error';
+        $response[ 'error' ] = 'not_created';
     }
 }
 

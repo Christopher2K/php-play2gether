@@ -54,6 +54,11 @@ if ($session->userIsLogged()) {
                         <label>DATE DE NAISSANCE</label>
                         <input type="date" name="birth_date" required/>
                     </div>
+
+                    <div class="Form-group">
+                        <label>TELEPHONE PORTABLE</label>
+                        <input maxlength="10" type="tel" name="number" required/>
+                    </div>
                 </div>
 
                 <div class="Fields-right">

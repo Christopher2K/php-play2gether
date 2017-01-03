@@ -3,8 +3,6 @@ require_once(__DIR__ . '/../module/Session.php');
 require_once(__DIR__ . '/../module/Connection.php');
 require_once(__DIR__ . '/../module/Communication.php');
 
-
-
 require_once(__DIR__ . '/../dao/AdDAO.php');
 require_once(__DIR__ . '/../entity/Ad.php');
 

@@ -21,8 +21,6 @@
    <hr />
    <h3 class="section-subheading text-muted"></h3>
 </div>
-<center>
-
 
 </div>
 

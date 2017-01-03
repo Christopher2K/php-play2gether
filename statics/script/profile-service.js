@@ -94,7 +94,8 @@ $(function () {
         var identity = {
             last_name: $('input[name="last_name"]').val(),
             first_name: $('input[name="first_name"]').val(),
-            city: $('select[name="city"]').select2().val()
+            city: $('select[name="city"]').select2().val(),
+            number: $('input[name="number"]').val()
         };
 
         $.ajax({
@@ -103,7 +104,6 @@ $(function () {
             data: identity,
             complete: function (data) {
                 var response = data.responseJSON;
-                console.log(data);
 
                 switch (response.status) {
                     case 'success':

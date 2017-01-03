@@ -18,8 +18,10 @@ require('dao/AdDAO.php');
 $connexion = Connection::getInstance();
 $session = Session::getInstance();
 
+$ad_dao = new AdDAO($connexion);
 $city_dao = new CityDAO($connexion);
 $sport_dao = new SportDAO($connexion);
+$user_dao = new UserDAO($connexion);
 
 $user = '';
 $user_city = '';
@@ -31,6 +33,7 @@ if ($session->userIsLogged()) {
     $user = $session->readSession('user');
     $user_city = $city_dao->select(['id_city' => $user->getCityFk()])[ 0 ];
     $user_sports = $sport_dao->getSportsByUser($user);
+    $user_ads = $ad_dao->getAdByUser($user);
 } else {
     header('Location: connexion.php');
 }
@@ -62,7 +65,7 @@ if ($session->userIsLogged()) {
             </div>
             <div class="Identity-infos">
                 <h1>Hello !</h1>
-                <h2><?php echo ucfirst(strtolower($user->getLastName())); ?> <?php echo strtoupper($user->getFirstName()); ?></h2>
+                <h2><?php echo ucfirst(strtolower($user->getLastName())); ?><?php echo strtoupper($user->getFirstName()); ?></h2>
                 <p>Tu es actif dans la ville de <strong><?php echo $user_city->getName(); ?></strong>. </p>
                 <p>Tu pratiques les sports suivants:
                     <?php
@@ -70,6 +73,9 @@ if ($session->userIsLogged()) {
                         echo '<strong>' . $user_sport->getName() . '</strong> ';
                     } ?>
                 </p>
+                <p>Tes informations de contact:</p>
+                <p><strong><?php echo $user->getEmail(); ?></strong></p>
+                <p><strong><?php echo $user->getNumber(); ?></strong></p>
             </div>
         </div>
 
@@ -79,52 +85,59 @@ if ($session->userIsLogged()) {
                     <h3>Historique des sessions sportives</h3>
                 </div>
             </div>
-            <div class="row">
-                <div class="Ad col-md-offset-2 col-md-8 col-xs-12">
-                    <div class="Ad-title col-md-3">
-                        <p>Titre</p>
-                    </div>
-                    <div class="Ad-author col-md-2">
-                        <p>Auteur</p>
-                    </div>
-                    <div class="Ad-date col-md-2">
-                        <p>00/00/0000</p>
-                    </div>
-                    <div class="Ad-sport col-md-2">
-                        <p>Sport</p>
-                    </div>
-                    <div class="Ad-button col-md-3">
-                        <button><a href="">Voir</a></button>
+
+            <?php
+            foreach ($user_ads as $ad) {
+                ?>
+                <div class="row">
+                    <div class="Ad col-md-offset-2 col-md-8 col-xs-12">
+                        <div class="Ad-title col-md-3">
+                            <p><?php echo $ad->getTitle(); ?></p>
+                        </div>
+                        <div class="Ad-author col-md-2">
+                            <p><?php echo $user_dao->select(['id_user' => $ad->getCreatorFk()])[0]; ?></p>
+                        </div>
+                        <div class="Ad-date col-md-2">
+                            <p><?php echo $ad->getDate(); ?></p>
+                        </div>
+                        <div class="Ad-sport col-md-2">
+                            <p><?php echo $sport_dao->select(['id_sport' => $ad->getSportFk()])[0]->getName(); ?></p>
+                        </div>
+                        <div class="Ad-button col-md-3">
+                            <button><a href="/annonceDetail.php?id=<?php echo $ad->getIdAd(); ?>">Voir</a></button>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <?php
+            }
+            ?>
         </div>
 
         <div class="Credentials-form hidden">
             <h3>Modifier tes informations d'identification</h3>
-            <hr />
+            <hr/>
             <form id="credentialsForm">
                 <div class="Form-line">
                     <div class="Form-group">
                         <label for="email">ADRESSE MAIL</label>
-                        <input type="email" name="email" value="<?php echo $user->getEmail(); ?>" required />
+                        <input type="email" name="email" value="<?php echo $user->getEmail(); ?>" required/>
                     </div>
 
                     <div class="Form-group">
                         <label for="current_password">MOT DE PASSE ACTUEL</label>
-                        <input type="password" name="current_password" required />
+                        <input type="password" name="current_password" required/>
                     </div>
                 </div>
 
                 <div class="Form-line">
                     <div class="Form-group">
                         <label for="new_password">NOUVEAU MOT DE PASSE</label>
-                        <input type="password" name="new_password" required />
+                        <input type="password" name="new_password" required/>
                     </div>
 
                     <div class="Form-group">
                         <label for="new_password_confirm">CONFIRMATION</label>
-                        <input type="password" name="new_password_confirm" required />
+                        <input type="password" name="new_password_confirm" required/>
                     </div>
                 </div>
 
@@ -148,7 +161,7 @@ if ($session->userIsLogged()) {
 
         <div class="Identity-form hidden">
             <h3>Modifier tes informations de profil</h3>
-            <hr />
+            <hr/>
             <form>
                 <div class="Form-line">
                     <div class="Form-group">
@@ -163,6 +176,10 @@ if ($session->userIsLogged()) {
                 </div>
 
                 <div class="Form-line">
+                    <div class="Form-group">
+                        <label for="number">TÉLÉPHONE PORTABLE</label>
+                        <input maxlength="10" type="tel" name="number" value="" required/>
+                    </div>
                     <div class="Form-group">
                         <label for="city">VILLE</label>
                         <select name="city" required></select>

@@ -12,6 +12,9 @@ class AdDAO extends DAO {
 
     static $CHANGE_STATUS = "UPDATE Ad SET status_fk=? WHERE id_ad=?";
 
+    static $GET_AD_BY_USER = "SELECT Ad.* FROM Ad, UserAd WHERE Ad.id_ad = UserAd.ad_fk AND UserAd.user_fk=?";
+
+
     public function __construct($db) {
         parent::__construct($db);
         $this->entity_name = 'Ad';
@@ -22,6 +25,8 @@ class AdDAO extends DAO {
         $this->customQueries[ 'update' ] = $this->db->prepare(AdDAO::$UPDATE);
         $this->customQueries[ 'delete' ] = $this->db->prepare(AdDAO::$DELETE);
         $this->customQueries[ 'change_status' ] = $this->db->prepare(AdDAO::$CHANGE_STATUS);
+        $this->customQueries[ 'get_ad_by_user' ] = $this->db->prepare(AdDAO::$GET_AD_BY_USER);
+
     }
 
     public function create(Ad $ad) {
@@ -56,5 +61,15 @@ class AdDAO extends DAO {
         $update_count = $this->customQueries[ 'change_status' ]->execute($request_array);
 
         return $update_count;
+    }
+
+    public function getAdByUser(User $user) {
+        $request_array = [$user->getIdUser()];
+
+        if ($this->customQueries[ 'get_ad_by_user' ]->execute($request_array)) {
+            return $this->renderData($this->customQueries[ 'get_ad_by_user' ]->fetchAll(PDO::FETCH_ASSOC));
+        } else {
+            return FALSE;
+        }
     }
 }

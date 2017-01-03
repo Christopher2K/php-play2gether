@@ -17,13 +17,14 @@ $user_dao = new UserDAO($connection);
 $data = [
     'last_name'  => $_POST[ 'last_name' ],
     'first_name' => $_POST[ 'first_name' ],
-    'city_fk'    => $_POST[ 'city' ]
+    'city_fk'    => $_POST[ 'city' ],
+    'number'     => $_POST[ 'number' ]
 ];
 
 $response = [];
 
-if ($user_dao->updateIdentity($user, $data[ 'first_name' ], $data[ 'last_name' ], $data[ 'city_fk' ])) {
-    $session->writeSession('user', $user_dao->select(['id_user' => $user->getIdUser()])[0]);
+if ($user_dao->updateIdentity($user, $data[ 'first_name' ], $data[ 'last_name' ], $data[ 'city_fk' ], $data[ 'number' ])) {
+    $session->writeSession('user', $user_dao->select(['id_user' => $user->getIdUser()])[ 0 ]);
     $response[ 'status' ] = 'success';
 } else {
     $response[ 'status' ] = 'error';

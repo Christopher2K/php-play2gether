@@ -5,14 +5,14 @@ require_once(__DIR__ . '/../entity/User.php');
 class UserDAO extends DAO {
 
     // Custom Queries
-    static $CREATE = "INSERT INTO User(first_name, last_name, gender, birth_date, city_fk, email, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    static $CREATE = "INSERT INTO User(first_name, last_name, gender, birth_date, city_fk, email, number, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
     static $ADD_USER_SPORT = "INSERT INTO UserSport(sport_fk, user_fk) VALUES (?, ?)";
     static $ADD_USER_AD = "INSERT INTO UserAd(ad_fk, user_fk) VALUES (?, ?)";
     static $DELETE_USER_AD = "DELETE FROM UserAd WHERE ad_fk=? AND user_fk=?";
 
     static $UPDATE_CREDENTIALS = "UPDATE User SET email=?, password=? WHERE id_user=?";
-    static $UPDATE_IDENTITY = "UPDATE User SET first_name=?, last_name=?, city_fk=? WHERE id_user=?";
+    static $UPDATE_IDENTITY = "UPDATE User SET first_name=?, last_name=?, city_fk=?, number=? WHERE id_user=?";
 
     static $GET_USERS_BY_AD = "SELECT User.* FROM User, UserAd WHERE User.id_user = UserAd.user_fk AND UserAd.ad_fk=?";
 
@@ -37,6 +37,7 @@ class UserDAO extends DAO {
         foreach ($user->toArray('create') as $value) {
             array_push($request_array, $value);
         }
+        print_r($request_array);
         $insert_count = $this->customQueries[ 'create' ]->execute($request_array);
 
         return $insert_count;
@@ -70,8 +71,8 @@ class UserDAO extends DAO {
         return $insert_count;
     }
 
-    public function updateIdentity(User $user, $first_name, $last_name, $city_fk) {
-        $request_array = [$first_name, $last_name, $city_fk, $user->getIdUser()];
+    public function updateIdentity(User $user, $first_name, $last_name, $city_fk, $number) {
+        $request_array = [$first_name, $last_name, $city_fk, $number, $user->getIdUser()];
         $insert_count = $this->customQueries[ 'update_identity' ]->execute($request_array);
 
         return $insert_count;

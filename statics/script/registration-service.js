@@ -18,6 +18,7 @@ $(function () {
                 email: $('input[name="email_adress"]').val(),
                 password: $('input[name="password"]').val(),
                 city_fk: $('select[name="city"]').select2().val(),
+                number: $('input[name="number"]').val(),
                 sports: []
             };
 
