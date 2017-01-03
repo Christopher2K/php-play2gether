@@ -45,8 +45,8 @@ if ($session->userIsLogged()) {
                     <div class="Form-group">
                         <label for="gender">SEXE</label>
                         <select name="gender" required>
-                            <option value="H">Homme</option>
-                            <option value="F">Femme</option>
+                            <option value="0">Homme</option>
+                            <option value="1">Femme</option>
                         </select>
                     </div>
 
