@@ -14,11 +14,11 @@
 	if(!empty($date))
 	 {$requete1.="AND MONTH(DATE_INSCRIPTION)='$date'";}
 	//Nbr inscrits H
-	$requete2 = "SELECT COUNT(*) AS NBR FROM User WHERE is_admin <> 1 AND User.gender='H' ";
+	$requete2 = "SELECT COUNT(*) AS NBR FROM User WHERE is_admin <> 1 AND User.gender=0 ";
 	if(!empty($date))
 	 {$requete2.="AND MONTH(DATE_INSCRIPTION)='$date'";}
 	//Nbr inscrits F
-	$requete3 = "SELECT COUNT(*) AS NBR FROM User WHERE is_admin <> 1 AND User.gender='F' ";
+	$requete3 = "SELECT COUNT(*) AS NBR FROM User WHERE is_admin <> 1 AND User.gender=1 ";
 		if(!empty($date))
 	 {$requete3.="AND MONTH(DATE_INSCRIPTION)='$date'";}
 	//Nbr inscrits 12-25 ans
@@ -48,7 +48,7 @@
 	if(!empty($date))
 	 {$requete9.="AND MONTH(DATEANNONCE)='$date'";}
 	//Meilleure région
-	$requete10="SELECT Region.name AS LIBELLE, count(Region.name) AS NBR from Ad join City villes on Ad.city_fk = villes.id_city join Department on villes.department_fk = Department.id_department join region on Department.region_fk = Region.id_region group by region.name LIMIT 0,1 ";
+	$requete10="SELECT Region.name AS LIBELLE, count(Region.name) AS NBR from Ad join City villes on Ad.city_fk = villes.id_city join Department on villes.department_fk = Department.id_department join Region on Department.region_fk = Region.id_region group by Region.name LIMIT 0,1 ";
 	if(!empty($date))
 	 {$requete10="SELECT Region.name AS LIBELLE, count(Region.name) AS NBR from Ad join City villes on Ad.city_fk = villes.id_city join Department on villes.department_fk = Department.id_department join region on Department.region_fk = Region.id_region  WHERE MONTH(Ad.created_on)='$date' group by Region.name LIMIT 0,1";}
 	//Meilleur sport
