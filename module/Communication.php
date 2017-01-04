@@ -18,8 +18,8 @@ require_once(__DIR__ . '/../module/CustomSoap.php');
             }
         }
         
-        static function sendMail() {
-
+        static function sendMail($mail,$titre,$message) {
+                mail($mail,$titre,$message);
         }
 
         static function sendSms($telephone_number, $message) {
