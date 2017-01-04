@@ -84,28 +84,30 @@ if ($session->userIsLogged()) {
             </div>
 
             <?php
-            foreach ($user_ads as $ad) {
-                ?>
-                <div class="row">
-                    <div class="Ad col-md-offset-2 col-md-8 col-xs-12">
-                        <div class="Ad-title col-md-3">
-                            <p><?php echo $ad->getTitle(); ?></p>
-                        </div>
-                        <div class="Ad-author col-md-2">
-                            <p><?php echo $user_dao->select(['id_user' => $ad->getCreatorFk()])[0]; ?></p>
-                        </div>
-                        <div class="Ad-date col-md-2">
-                            <p><?php echo $ad->getDate(); ?></p>
-                        </div>
-                        <div class="Ad-sport col-md-2">
-                            <p><?php echo $sport_dao->select(['id_sport' => $ad->getSportFk()])[0]->getName(); ?></p>
-                        </div>
-                        <div class="Ad-button col-md-3">
-                            <button><a href="/annonceDetail.php?id=<?php echo $ad->getIdAd(); ?>">Voir</a></button>
+            if ($user_ads) {
+                foreach ($user_ads as $ad) {
+                    ?>
+                    <div class="row">
+                        <div class="Ad col-md-offset-2 col-md-8 col-xs-12">
+                            <div class="Ad-title col-md-3">
+                                <p><?php echo $ad->getTitle(); ?></p>
+                            </div>
+                            <div class="Ad-author col-md-2">
+                                <p><?php echo $user_dao->select(['id_user' => $ad->getCreatorFk()])[ 0 ]; ?></p>
+                            </div>
+                            <div class="Ad-date col-md-2">
+                                <p><?php echo $ad->getDate(); ?></p>
+                            </div>
+                            <div class="Ad-sport col-md-2">
+                                <p><?php echo $sport_dao->select(['id_sport' => $ad->getSportFk()])[ 0 ]->getName(); ?></p>
+                            </div>
+                            <div class="Ad-button col-md-3">
+                                <button><a href="/annonceDetail.php?id=<?php echo $ad->getIdAd(); ?>">Voir</a></button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <?php
+                    <?php
+                }
             }
             ?>
         </div>

@@ -73,12 +73,7 @@
                     <li>
                         <a class="page-scroll" href="inscription.php">Inscription</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="recherche.php"><i class="fa fa-search" aria-hidden="true"></i> Recherche rapide</a>
-                    </li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container-fluid -->
     </nav>
