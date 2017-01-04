@@ -88,4 +88,4 @@ if ($user & $ad->getStatusFk() != Ad::$STATUS_TERMINATED) {
 }
 
 header('Content-type: application/json; charset=utf-8');
-echo json_encode($response, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHED);
+echo json_encode($response, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
