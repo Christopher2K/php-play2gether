@@ -1,5 +1,2 @@
-<?php 
-
+<?php
 header('Location:administration.php');
-
-?>

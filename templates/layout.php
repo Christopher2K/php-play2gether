@@ -57,7 +57,6 @@ function getScripts()
     <script src="/statics/script/polyfills.js"></script>
 
     <?php
-
 }
 
 /**
@@ -94,38 +93,6 @@ function getMenu(Session $session)
             ?>
         </ul>
     </nav>
-
-    <div class="SearchBox SearchBox--inactive">
-        <div class="SearchBox-header">
-            <h3>Trouve ta partie !</h3>
-        </div>
-
-        <div class="SearchBox-inputField">
-            <div class="inputField-sport">
-                <label for="search-sport">Entre ton sport</label>
-                <input type="text" name="search-sport" id="search-sport"/>
-            </div>
-
-            <div class="inputField-date">
-                <label for="search-date">Choisis une date</label>
-                <input type="text" name="search-date" id="search-date"/>
-            </div>
-
-            <div class="inputField-location">
-                <label for="search-location">Choisi un endroit</label>
-                <input type="text" name="search-location" id="search-location"/>
-            </div>
-        </div>
-
-        <div>
-            ICI FILTRES
-        </div>
-
-        <div>
-            <button>Rechercher</button>
-        </div>
-    </div>
-
     <?php
 }
 
