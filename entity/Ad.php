@@ -1,5 +1,7 @@
 <?php
 require_once(__DIR__ . '/../abstract/Entity.php');
+require_once(__DIR__ . '/Sport.php');
+
 
 class Ad extends Entity {
 
@@ -46,6 +48,18 @@ class Ad extends Entity {
         }
 
         return $array;
+    }
+
+    public function toFrontend($current_players, Sport $sport) {
+        return [
+            'id' => $this->id_ad,
+            'title' => $this->title,
+            'date' => $this->getDate(),
+            'current_players' => $current_players,
+            'max_players' => $this->max_players,
+//            'author' => $author->__toString(),
+            'sport' => $sport->getName(),
+        ];
     }
     
     public function isCreator(User $user) {

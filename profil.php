@@ -18,7 +18,9 @@ require('dao/AdDAO.php');
 $connexion = Connection::getInstance();
 $session = Session::getInstance();
 
+$ad_dao = new AdDAO($connexion);
 $city_dao = new CityDAO($connexion);
+$user_dao = new UserDAO($connexion);
 $sport_dao = new SportDAO($connexion);
 
 $user = '';
@@ -31,6 +33,7 @@ if ($session->userIsLogged()) {
     $user = $session->readSession('user');
     $user_city = $city_dao->select(['id_city' => $user->getCityFk()])[ 0 ];
     $user_sports = $sport_dao->getSportsByUser($user);
+    $user_ads = $ad_dao->getAdByUser($user);
 } else {
     header('Location: connexion.php');
 }
