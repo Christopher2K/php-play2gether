@@ -50,7 +50,6 @@ if (!$session->userIsLogged()) {
                 <div class="form-group">
                     <label for="max_players">JOUEURS MAX</label>
                     <select name="max_players" required>
-                        <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
