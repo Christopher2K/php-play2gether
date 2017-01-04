@@ -69,7 +69,7 @@ function getMenu(Session $session)
     ?>
     <nav class="Navbar Navbar--initial">
         <div class="Navbar-logo">
-            <img src="/statics/img/logo-small.png"/>
+            <a href="index.php"><img src="/statics/img/logo-small.png"/></a>
         </div>
         <div class="Navbar-burger">
             <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
@@ -176,7 +176,6 @@ if(empty($_GET['nom_contact'])      ||
    empty($_GET['telephone_contact'])   ||
    !filter_var($_GET['email_contact'],FILTER_VALIDATE_EMAIL))
    {
-   echo "No arguments Provided!";
    return false;
    }
    
@@ -188,7 +187,7 @@ $message = strip_tags(htmlspecialchars($_GET['message_contact']));
 // Create the email and send the message
 $to = 'fabien.lamotte1@gmail.com'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
 $email_subject = "Contact Play2Gether :  $name";
-$email_body = "Vous avez reçu un nouveau message de Play2Gether via le formulaire de contact.\n\n"."Voici les informations :\n\nNom: $name\n\nEmail: $email_address\n\nTel: $phone\n\nMessage:\n$message";
+$email_body = "Vous avez recu un nouveau message de Play2Gether via le formulaire de contact.\n\n"."Voici les informations :\n\nNom: $name\n\nEmail: $email_address\n\nTel: $phone\n\nMessage:\n$message";
 $headers = "From: noreply@play2gether.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
 $headers .= "Reply-To: $email_address";   
 
