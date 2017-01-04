@@ -53,7 +53,7 @@ if (isset($_GET[ 'id' ])) {
 
 ?>
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" xmlns="http://www.w3.org/1999/html">
 <head>
     <?php
     $title = 'Détail de l\'annonce : ' . $ad->getTitle();
@@ -190,6 +190,44 @@ if (isset($_GET[ 'id' ])) {
                 ?>
 
             </div>
+        </div>
+    </div>
+    <div class="ShowAd-comment container">
+        <div class="row">
+            <h3>Commentaires de la communauté</h3>
+        </div>
+
+        <!-- TODO BEGIN COMMENT -->
+        <div class="Comment row">
+            <div class="Comment-header col-md-12">
+                <p>AUTEUR</p>
+                <p>Posté le 00/00/0000</p>
+            </div>
+            <div class="Comment-content">
+                <p>CECI EST UN COMMENTAIRE</p>
+            </div>
+        </div>
+        <!-- END COMMENT -->
+
+        <div class="row">
+            <form method="post" id="commentForm" class="Comment-form">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="content">Ton commentaire</label>
+                        <textarea name="content" class="form-control" required></textarea>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="alert alert-danger server_error hidden">
+                        <strong>Erreur !</strong> Quelque chose s'est mal passé. Contactez nous.
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <button type="submit">Ajoute ton commentaire</button>
+                </div>
+            </form>
         </div>
     </div>
 </section>
