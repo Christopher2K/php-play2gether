@@ -41,7 +41,7 @@ $resultNBR = mysqli_query($base,$query);
 // Utilisation du résultat
 while ($row1 = mysqli_fetch_assoc($resultNBR)) {
 	$prenom = $row1['last_name'];
-	$email_subject = "'.$prenom.', connaissez-vous ce sport ? ";
+	$email_subject = "$prenom, connaissez-vous ce sport ? ";
 	$to = $row1['email'];
 	mail($to,$email_subject,$email_body,$headers);
 		
