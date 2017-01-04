@@ -62,7 +62,7 @@ if ($session->userIsLogged()) {
             </div>
             <div class="Identity-infos">
                 <h1>Hello !</h1>
-                <h2><?php echo ucfirst(strtolower($user->getLastName())); ?><?php echo strtoupper($user->getFirstName()); ?></h2>
+                <h2><?php echo ucfirst(strtolower($user->getLastName()) . " "); ?><?php echo strtoupper($user->getFirstName()); ?></h2>
                 <p>Tu es actif dans la ville de <strong><?php echo $user_city->getName(); ?></strong>. </p>
                 <p>Tu pratiques les sports suivants:
                     <?php
