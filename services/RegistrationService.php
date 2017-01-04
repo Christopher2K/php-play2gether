@@ -3,6 +3,7 @@ require_once(__DIR__ . '/../module/Connection.php');
 require_once(__DIR__ . '/../module/Session.php');
 require_once(__DIR__ . '/../entity/User.php');
 require_once(__DIR__ . '/../dao/UserDAO.php');
+
 require_once(__DIR__ . '/../module/Communication.php');
 
 // Session
@@ -28,7 +29,6 @@ if ($user_dao->select(['email' => $user->getEmail()])) {
        // Communication::sendMail($user->getEmail(),'Votre compte a ete enregistre','Bienvenue sur Sport2Gether ! Déposez dès maintenant une annonce ou recherchez en une ! A bientot sur www.play2Gether.tk');
 =======
 
-        Communication::sendMail($user->getEmail(),'Votre compte a ete enregistre','Bienvenue sur Sport2Gether ! Déposez dès maintenant une annonce ou recherchez en une ! A bientot sur www.play2Gether.tk');
 
 >>>>>>> b6a550d3d422845d6b3af538f97adf1b167cbf05
         // Register sports
@@ -37,11 +37,11 @@ if ($user_dao->select(['email' => $user->getEmail()])) {
             $user_dao->addUserSport($user, $sport_id);
         }
 
-        try {
-            // ENVOI DE MAIL ICI
-        } catch (Exception $e) {
-            // DO NOTHING
-        }
+//        try {
+//            Communication::sendMail($_POST['email'],'Votre compte a ete enregistre','Bienvenue sur Sport2Gether ! Déposez dès maintenant une annonce ou recherchez en une ! A bientot sur www.play2Gether.tk');
+//        } catch (Exception $e) {
+//            // DO NOTHING
+//        }
 
     } else {
         $response[ 'status' ] = 'error';
