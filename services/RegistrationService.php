@@ -30,6 +30,13 @@ if ($user_dao->select(['email' => $user->getEmail()])) {
         foreach ($sport_ids as $sport_id) {
             $user_dao->addUserSport($user, $sport_id);
         }
+
+        try {
+            // ENVOI DE MAIL ICI
+        } catch (Exception $e) {
+            // DO NOTHING
+        }
+
     } else {
         $response[ 'status' ] = 'error';
         $response[ 'error' ] = 'not_created';
