@@ -23,6 +23,7 @@
           @include display-flex(column, flex-start, flex-end);
 
           input {
+            color : #FFCF51;
             margin-bottom: 30px;
 
             padding: 5px 20px;
@@ -54,6 +55,7 @@
           @include display-flex(column, flex-start, flex-start);
 
           textarea {
+            color : #FFCF51;
             margin-bottom: 30px;
 
             padding: 10px 20px;

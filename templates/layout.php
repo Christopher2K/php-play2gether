@@ -167,6 +167,33 @@ function getContactForm()
 
     </section>
     <?php
+
+    // Check for empty fields
+if(empty($_GET['nom_contact'])      ||
+   empty($_GET['prenom_contact'])     ||
+   empty($_GET['message_contact'])     ||
+   empty($_GET['email_contact'])     ||
+   empty($_GET['telephone_contact'])   ||
+   !filter_var($_GET['email_contact'],FILTER_VALIDATE_EMAIL))
+   {
+   echo "No arguments Provided!";
+   return false;
+   }
+   
+$name = strip_tags(htmlspecialchars($_GET['nom_contact']));
+$email_address = strip_tags(htmlspecialchars($_GET['email_contact']));
+$phone = strip_tags(htmlspecialchars($_GET['telephone_contact']));
+$message = strip_tags(htmlspecialchars($_GET['message_contact']));
+
+// Create the email and send the message
+$to = 'fabien.lamotte1@gmail.com'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
+$email_subject = "Contact Play2Gether :  $name";
+$email_body = "Vous avez reçu un nouveau message de Play2Gether via le formulaire de contact.\n\n"."Voici les informations :\n\nNom: $name\n\nEmail: $email_address\n\nTel: $phone\n\nMessage:\n$message";
+$headers = "From: noreply@play2gether.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
+$headers .= "Reply-To: $email_address";   
+
+mail($to,$email_subject,$email_body,$headers);
+return true;         
 }
 
 ?>
