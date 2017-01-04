@@ -1,6 +1,4 @@
 <?php
-require_once(__DIR__ . '/../module/CustomSoap.php');
-
 class Communication {
     // CONST
     static $SMS_NIC = "br150098-ovh";
@@ -13,7 +11,12 @@ class Communication {
 
     public static function getInstance() {
         if (is_null(self::$_sms_instance)) {
-            self::$_sms_instance = new SoapClient("https://www.ovh.com/soapi/soapi-re-1.8.wsdl");
+            self::$_sms_instance = new SoapClient("http://www.ovh.com/soapi/soapi-re-1.63.wsdl",
+                [
+                    'stream_context' => stream_context_create([
+                            'ssl' => ['verify_peer' => FALSE, 'verify_peer_name' => FALSE, 'allow_self_signed' => TRUE]
+                        ]
+                    )]);
             self::$_sms_session = self::$_sms_instance->login(self::$SMS_NIC, self::$SMS_PASSWORD, "fr", FALSE);
         }
     }
