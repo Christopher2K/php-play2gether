@@ -128,23 +128,23 @@
 
             <div class="Team-members">
                 <div class="Member">
-                    <img/>
+                    <img src="/statics/img/remib.jpg"/>
                     <p class="Member-name">Remi BOISEAUBERT</p>
                     <p class="Member-title">Développeur PHP</p>
                     <p class="Member-job">Chef de projet</p>
                     <ul class="Member-socials">
                         <li class="Social">
-                            <a href="">
+                            <a href="https://www.facebook.com/remi.boiseaubert">
                                 <i class="fa fa-facebook"></i>
                             </a>
                         </li>
                         <li class="Social">
-                            <a href="">
+                            <a href="https://twitter.com/_devicZ">
                                 <i class="fa fa-twitter"></i>
                             </a>
                         </li>
                         <li class="Social">
-                            <a href="">
+                            <a href="https://fr.linkedin.com/in/rémi-boiseaubert-907524118">
                                 <i class="fa fa-linkedin"></i>
                             </a>
                         </li>
@@ -152,23 +152,23 @@
                 </div>
 
                 <div class="Member">
-                    <img/>
+                    <img src="/statics/img/chrisnk.jpg"/>
                     <p class="Member-name">Christopher N. KATOYI-KABA</p>
                     <p class="Member-title">Développeur Fullstack</p>
                     <p class="Member-job">Chargé de documentation</p>
                     <ul class="Member-socials">
                         <li class="Social">
-                            <a href="">
+                            <a href="https://www.facebook.com/KeazyChris">
                                 <i class="fa fa-facebook"></i>
                             </a>
                         </li>
                         <li class="Social">
-                            <a href="">
+                            <a href="http://twitter.com/Christopher_2K">
                                 <i class="fa fa-twitter"></i>
                             </a>
                         </li>
                         <li class="Social">
-                            <a href="">
+                            <a href="https://fr.linkedin.com/in/christopherkatoyi">
                                 <i class="fa fa-linkedin"></i>
                             </a>
                         </li>
@@ -176,13 +176,13 @@
                 </div>
 
                 <div class="Member">
-                    <img/>
+                    <img src="/statics/img/tarekem.jpg"/>
                     <p class="Member-name">Tarek ELMARSI</p>
                     <p class="Member-title">Développeur Php</p>
                     <p class="Member-job">Responsable du carnet de bord</p>
                     <ul class="Member-socials">
                         <li class="Social">
-                            <a href="">
+                            <a href="https://www.facebook.com/tarek.elmarssi">
                                 <i class="fa fa-facebook"></i>
                             </a>
                         </li>
@@ -192,7 +192,7 @@
                             </a>
                         </li>
                         <li class="Social">
-                            <a href="">
+                            <a href="https://fr.linkedin.com/in/tarek-el-marssi-a04485b8">
                                 <i class="fa fa-linkedin"></i>
                             </a>
                         </li>
@@ -202,23 +202,23 @@
 
             <div class="Team-members">
                 <div class="Member">
-                    <img/>
+                    <img src="/statics/img/flosl.jpg"/>
                     <p class="Member-name">Florian SAINT-LEGER</p>
                     <p class="Member-title">Web designer</p>
                     <p class="Member-job">Chargé de communication</p>
                     <ul class="Member-socials">
                         <li class="Social">
-                            <a href="">
+                            <a href="https://www.facebook.com/florian.saintleger">
                                 <i class="fa fa-facebook"></i>
                             </a>
                         </li>
                         <li class="Social">
-                            <a href="">
+                            <a href="https://twitter.com/TheDarkThanatos">
                                 <i class="fa fa-twitter"></i>
                             </a>
                         </li>
                         <li class="Social">
-                            <a href="">
+                            <a href="https://fr.linkedin.com/in/florian-saint-léger-94a838123">
                                 <i class="fa fa-linkedin"></i>
                             </a>
                         </li>
@@ -227,23 +227,23 @@
                 </div>
 
                 <div class="Member">
-                    <img/>
+                    <img src="/statics/img/fabien.jpg"/>
                     <p class="Member-name">Fabien LAMOTTE</p>
                     <p class="Member-title">Intégrateur front-end</p>
                     <p class="Member-job">Client</p>
                     <ul class="Member-socials">
                         <li class="Social">
-                            <a href="">
+                            <a href="https://www.facebook.com/fabien.vigato">
                                 <i class="fa fa-facebook"></i>
                             </a>
                         </li>
                         <li class="Social">
-                            <a href="">
+                            <a href="https://twitter.com/VigatoDeVega">
                                 <i class="fa fa-twitter"></i>
                             </a>
                         </li>
                         <li class="Social">
-                            <a href="">
+                            <a href="https://fr.linkedin.com/in/fabien-lamotte-a16b3091">
                                 <i class="fa fa-linkedin"></i>
                             </a>
                         </li>

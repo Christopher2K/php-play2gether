@@ -45,6 +45,13 @@ $padding-header: 20px;
     }
   }
 
+  .Member img {
+    filter: grayscale(100%);
+    width: 150px;
+    height: 150px;
+    border-radius: 80px;
+  }
+
   .Concept {
     @include section-default();
     background: $pseudo-white;
