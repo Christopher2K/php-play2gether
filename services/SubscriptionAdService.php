@@ -45,6 +45,16 @@ if ($user & $ad->getStatusFk() != Ad::$STATUS_TERMINATED) {
 //                        } catch (Exception $e) {
 //                            $response['sms_error'] = ['sms_error'];
 //                        }
+                        try {
+                            //Communication::sendSms($user->getNumber(), $user->getMessageSubscriber($ad_creator));
+                            //Communication::sendSms($ad_creator->getNumber(), $ad_creator->getMessageAdCreator($user));
+                            //Envoie Mail
+                            Communication::sendMail($user->getEmail(),'Vous venez d accepter une annonce', $user->getMessageSubscriber($ad_creator),'From: noreply@play2Gether.com');
+                            Communication::sendMail($ad_creator->getMail(),'Votre annonce a ete accepte', $ad_creator->getMessageAdCreator($user),'From: noreply@play2Gether.com');
+                        } catch (Exception $e) {
+                            $response['sms_error'] = ['sms_error'];
+                        }
+                        // TODO SEND MAIL
                         // END
 
                         $response[ 'status' ] = 'success';
