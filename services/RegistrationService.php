@@ -24,7 +24,7 @@ if ($user_dao->select(['email' => $user->getEmail()])) {
         $response[ 'status' ] = 'success';
         $user = $user_dao->logIn($user->getEmail(), $user->getPassword());
         $session->writeSession('user', $user);
-        Communication::sendMail($user->getEmail(),'Votre compte a ete enregistre','Bienvenue sur Sport2Gether ! Déposez dès maintenant une annonce ou recherchez en une ! A bientot sur www.play2Gether.tk');
+       // Communication::sendMail($user->getEmail(),'Votre compte a ete enregistre','Bienvenue sur Sport2Gether ! Déposez dès maintenant une annonce ou recherchez en une ! A bientot sur www.play2Gether.tk');
         // Register sports
         $sport_ids = $_POST[ 'sports' ];
         foreach ($sport_ids as $sport_id) {
