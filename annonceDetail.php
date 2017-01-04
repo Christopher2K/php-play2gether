@@ -19,12 +19,16 @@ require_once(__DIR__ . '/entity/Status.php');
 require_once(__DIR__ . '/dao/SportDAO.php');
 require_once(__DIR__ . '/entity/Sport.php');
 
+require_once(__DIR__ . '/dao/CommentDAO.php');
+require_once(__DIR__ . '/entity/Comment.php');
+
 $session = Session::getInstance();
 $ad_dao = new AdDAO(Connection::getInstance());
 $city_dao = new CityDAO(Connection::getInstance());
 $user_dao = new UserDAO(Connection::getInstance());
 $sport_dao = new SportDAO(Connection::getInstance());
 $status_dao = new StatusDAO(Connection::getInstance());
+$comment_dao = new CommentDAO(Connection::getInstance());
 
 if (!$session->userIsLogged()) {
     header('Location: profil.php');
@@ -38,6 +42,7 @@ $ad_stauts = '';
 $ad_city = '';
 $ad_sport = '';
 $users_ad = '';
+$comments_ad = '';
 
 if (isset($_GET[ 'id' ])) {
     $ad = $ad_dao->select(['id_ad' => $_GET[ 'id' ]])[ 0 ];
@@ -45,8 +50,8 @@ if (isset($_GET[ 'id' ])) {
     $ad_status = $status_dao->select(['id_status' => $ad->getStatusFk()])[ 0 ];
     $ad_creator = $user_dao->select(['id_user' => $ad->getCreatorFk()])[ 0 ];
     $ad_sport = $sport_dao->select(['id_sport' => $ad->getSportFk()])[ 0 ];
-
     $users_ad = $user_dao->getUsersByAd($_GET[ 'id' ]);
+    $comments_ad = $comment_dao->select(['ad_fk' => $ad->getIdAd()]);
 } else {
     header('Location: /annonces.php');
 }
@@ -197,30 +202,49 @@ if (isset($_GET[ 'id' ])) {
             <h3>Commentaires de la communauté</h3>
         </div>
 
-        <!-- TODO BEGIN COMMENT -->
-        <div class="Comment row">
-            <div class="Comment-header col-md-12">
-                <p>AUTEUR</p>
-                <p>Posté le 00/00/0000</p>
+        <?php
+        foreach ($comments_ad as $comment) {
+            ?>
+            <!-- TODO BEGIN COMMENT -->
+            <div class="Comment row">
+                <div class="Comment-header col-md-12">
+                    <p><?php echo $user_dao->select(['id_user' => $comment->getAuthorFk()])[ 0 ]; ?></p>
+                    <p><?php echo $comment->getPostedOn(); ?></p>
+                </div>
+                <div class="Comment-content col-md-12">
+                    <p><?php echo $comment->getContent(); ?></p>
+                </div>
+                <?php
+                if ($user->getIdUser() == $comment->getAuthorFk()) {
+                    ?>
+                    <div class="Comment-options col-md-12">
+                        <button class="Delete-comment" data-id="<?php echo $comment->getIdComment(); ?>">Supprimer le commentaire</button>
+                    </div>
+                    <?php
+                }
+                ?>
             </div>
-            <div class="Comment-content">
-                <p>CECI EST UN COMMENTAIRE</p>
-            </div>
-        </div>
-        <!-- END COMMENT -->
+            <!-- END COMMENT -->
+            <?php
+        }
+        ?>
 
         <div class="row">
             <form method="post" id="commentForm" class="Comment-form">
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="content">Ton commentaire</label>
-                        <textarea name="content" class="form-control" required></textarea>
+                        <textarea name="content" class="form-control" placeholder="30 caractères min."
+                                  required></textarea>
                     </div>
                 </div>
 
                 <div class="col-md-12">
                     <div class="alert alert-danger server_error hidden">
                         <strong>Erreur !</strong> Quelque chose s'est mal passé. Contactez nous.
+                    </div>
+                    <div class="alert alert-danger too_short hidden">
+                        <strong>Erreur !</strong> Ton commentaire est trop court.
                     </div>
                 </div>
 
@@ -239,5 +263,7 @@ if (isset($_GET[ 'id' ])) {
 <script src="/statics/script/subscription-ad-service.js"></script>
 <script src="/statics/script/modify-ad-service.js"></script>
 <script src="/statics/script/delete-ad-service.js"></script>
+<script src="/statics/script/comment-service.js"></script>
+
 </body>
 </html>

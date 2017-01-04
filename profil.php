@@ -109,6 +109,7 @@ if ($session->userIsLogged()) {
                     <?php
                 }
             }
+
             ?>
         </div>
 
