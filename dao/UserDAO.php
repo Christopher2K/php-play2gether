@@ -37,7 +37,6 @@ class UserDAO extends DAO {
         foreach ($user->toArray('create') as $value) {
             array_push($request_array, $value);
         }
-        print_r($request_array);
         $insert_count = $this->customQueries[ 'create' ]->execute($request_array);
 
         return $insert_count;
