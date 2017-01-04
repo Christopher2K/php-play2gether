@@ -30,10 +30,7 @@ if ($user_dao->select(['email' => $user->getEmail()])) {
         foreach ($sport_ids as $sport_id) {
             $user_dao->addUserSport($user, $sport_id);
         }
-        try {
-            Communication::sendMail($_POST['email'],'Votre compte a ete enregistre','Bienvenue sur Sport2Gether ! Déposez dès maintenant une annonce ou recherchez en une ! A bientot sur www.play2Gether.tk','From: noreply@play2Gether.com');
-        } catch (Exception $e) {
-        }
+        Communication::sendMail($_POST[ 'email' ], 'Votre compte a ete enregistre', 'Bienvenue sur Sport2Gether ! Déposez dès maintenant une annonce ou recherchez en une ! A bientot sur www.play2Gether.tk', 'From: noreply@play2Gether.com');
     } else {
         $response[ 'status' ] = 'error';
         $response[ 'error' ] = 'not_created';
