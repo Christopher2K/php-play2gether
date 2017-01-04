@@ -233,8 +233,8 @@ if (isset($_GET[ 'id' ])) {
             <form method="post" id="commentForm" class="Comment-form">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label for="content">Ton commentaire</label>
-                        <textarea name="content" class="form-control" placeholder="30 caractères min."
+                        <label for="content_cm">Ton commentaire</label>
+                        <textarea name="content_cm" class="form-control" placeholder="30 caractères min."
                                   required></textarea>
                     </div>
                 </div>

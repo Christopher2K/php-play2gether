@@ -1,6 +1,6 @@
 $(function () {
     function commentValid() {
-        return ($('textarea[name="content"]').val().length > 30);
+        return ($('textarea[name="content_cm"]').val().length > 30);
     }
 
     // HANDLE FORM
@@ -11,7 +11,7 @@ $(function () {
         if (commentValid()) {
             var comment = {
                 ad_fk: urlParams.id,
-                content: $('textarea[name="content"]').val(),
+                content: $('textarea[name="content_cm"]').val(),
             };
 
             $.ajax({

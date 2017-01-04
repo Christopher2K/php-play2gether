@@ -39,13 +39,12 @@ if ($user & $ad->getStatusFk() != Ad::$STATUS_TERMINATED) {
                         }
 
                         // BEGIN SEND MAIL / SMS
-                        try {
-                            Communication::sendSms($user->getNumber(), $user->getMessageSubscriber($ad_creator));
-                            Communication::sendSms($ad_creator->getNumber(), $ad_creator->getMessageAdCreator($user));
-                        } catch (Exception $e) {
-                            $response['sms_error'] = ['sms_error'];
-                        }
-                        // TODO SEND MAIL
+//                        try {
+//                            Communication::sendSms($user->getNumber(), $user->getMessageSubscriber($ad_creator));
+//                            Communication::sendSms($ad_creator->getNumber(), $ad_creator->getMessageAdCreator($user));
+//                        } catch (Exception $e) {
+//                            $response['sms_error'] = ['sms_error'];
+//                        }
                         // END
 
                         $response[ 'status' ] = 'success';
