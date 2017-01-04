@@ -18,8 +18,8 @@ class Communication {
         }
     }
 
-    static function sendMail($mail, $titre, $message) {
-        mail($mail, $titre, $message);
+    static function sendMail($mail,$titre, $message,$headers) {
+        mail($mail, $titre, $message,$headers);
     }
 
     static function sendSms($telephone_number, $message) {
